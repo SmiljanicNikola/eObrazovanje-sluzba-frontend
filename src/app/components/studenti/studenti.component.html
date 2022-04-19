@@ -1,11 +1,12 @@
-<div class="body">
-    <h2>Svi Studenti</h2>
-    <table border="1">
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-</div>
+<table id="students-table">
+    <tr>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Username</th>
+    </tr>
+    <tr *ngFor="let s of students">
+      <td>{{ s.lastname }}</td>
+      <td>{{ s.firstname }}</td>
+      <td>{{ s.username }}</td>
+    </tr>
+  </table>

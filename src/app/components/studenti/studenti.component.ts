@@ -1,24 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-
-export class Student{
-  constructor(
-    public username:string,
-    public lastname: string
-  ){}
-}
-
-var token = localStorage.getItem("user");
-//const token = JSON.parse(localStorage.getItem("user")).token
-
-var headers_object = new HttpHeaders();
-  headers_object.append('Content-Type', 'application/json');
-  headers_object.append("Authorization", "Bearer" + token);
-
-const httpOptions = {
-  headers: headers_object
-};
+import { StudentService } from 'src/app/services/student/student.service';
+import { Student } from 'src/app/interfaces/Student';
 
 @Component({
   selector: 'app-studenti',
@@ -27,23 +9,12 @@ const httpOptions = {
 })
 export class StudentiComponent implements OnInit {
 
-  student: Student[];
+  students:Student[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
-    this.getStudent();
-    console.log("Test")
+    this.studentService.getStudents().subscribe((students) => this.students = students)
   }
-
-  getStudent(){
-    this.httpClient.get<any>('http://localhost:8080/api/students', httpOptions).subscribe(
-      response =>{
-        console.log('Evo ga'+response);
-        this.student = response;
-      }
-    )
-  };
-  
 
 }

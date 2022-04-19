@@ -1,4 +1,4 @@
-export interface StudentiResponse {
+export interface Student {
     username: string;
     firstname: string;
     lastname: string;
