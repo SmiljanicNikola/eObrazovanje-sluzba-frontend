@@ -22,4 +22,9 @@ export class AuthService {
     return this.http.post<LoginRequest>(this.apiUrl,  request, httpOptions)
   }
 
+  getToken(){
+    let user = JSON.parse(localStorage.getItem('user') || '{}')
+    return user.token
+  }
+
 }
