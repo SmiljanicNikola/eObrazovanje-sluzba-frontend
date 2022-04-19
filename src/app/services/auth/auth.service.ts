@@ -24,7 +24,7 @@ export class AuthService {
 
   getToken(){
     let user = JSON.parse(localStorage.getItem('user') || '{}')
-    return user.token
+    return user
   }
 
 }

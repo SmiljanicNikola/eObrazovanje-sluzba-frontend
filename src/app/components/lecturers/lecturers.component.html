@@ -1,0 +1,20 @@
+<table id="lecturers-table">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Username</th>
+    <th>Address</th>
+    <th>JMBG</th>
+    <th>Pay</th>
+    <th>Is Blocked</th>
+  </tr>
+  <tr *ngFor="let l of lecturers">
+    <td>{{ l.name }}</td>
+    <td>{{ l.surname }}</td>
+    <td>{{ l.username }}</td>
+    <td>{{ l.address }}</td>
+    <td>{{ l.jmbg }}</td>
+    <td>{{ l.pay }}</td>
+    <td>{{ l.blocked }}</td>
+  </tr>
+</table>
