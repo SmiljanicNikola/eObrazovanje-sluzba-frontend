@@ -1,0 +1,27 @@
+#subjects-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  #subjects-table td,#subjects-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #subjects-table tr:nth-child(even) td{
+    background: #f2f2f2;
+  }
+  
+  #subjects-table tr:hover td{
+    background: #ddd;
+  }
+  
+  #subjects-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00a8ba;
+    color: white;
+  }
