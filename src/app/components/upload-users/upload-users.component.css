@@ -1,0 +1,53 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.20em;
+  font-weight: 600;
+  color: #00a8ba;
+  background-color: #FFFFFF;
+  border: 1px solid #00a8ba;
+  display: inline-block;
+  padding: 9px;
+  border-radius: 9px;
+  margin: 3px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+
+.inputfile + label:hover {
+  background-color: #00a8ba;
+  color: #FFFFFF;
+}
+
+.cont-class{
+  display: inline;
+}
+
+.btn{
+  font-size: 1.10em;
+  font-weight: 600;
+  color: white;
+  background-color: #00a8ba;
+  border: 1px solid #00a8ba;
+  display: inline-block;
+  padding: 9px;
+  border-radius: 9px;
+  margin: 3px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.btn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05); 
+}

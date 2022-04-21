@@ -1,10 +1,11 @@
-<div>
+<div class="upload-btn-wrapper">
   <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">      
-    <div>
-      <input type="file" name="file" (change)="onFileSelect($event)" />
+    <div class="cont-class">
+      <input type="file" name="file" id="file" class="inputfile" (change)="onFileSelect($event)" />
+      <label for="file">{{fileName ? fileName:'Choose a file'}}</label>
     </div>
-    <div>
-      <button type="submit">Upload</button>
+    <div class="cont-class" *ngIf="uploaded">
+      <button class="btn" type="submit">Upload</button>
     </div>
   </form>
 </div>

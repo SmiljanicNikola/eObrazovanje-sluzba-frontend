@@ -10,6 +10,8 @@ import { StudentService } from 'src/app/services/student/student.service';
 export class UploadUsersComponent implements OnInit {
 
   uploadForm: FormGroup;  
+  uploaded: boolean;
+  fileName:string;
 
   constructor(private formBuilder: FormBuilder, private studentService:StudentService) { }
 
@@ -23,6 +25,8 @@ export class UploadUsersComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.uploadForm.get('file')?.setValue(file);
+      this.uploaded = true;
+      this.fileName = file.name;
     }
   }
 
