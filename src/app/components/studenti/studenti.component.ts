@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
-import { Student } from 'src/app/interfaces/Student';
+import { Student } from 'src/app/models/Student';
+import { UploadUsersComponent } from '../upload-users/upload-users.component';
+
 
 @Component({
   selector: 'app-studenti',

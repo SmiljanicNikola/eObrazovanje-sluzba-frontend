@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Student } from 'src/app/interfaces/Student';
+import { Student } from 'src/app/models/Student';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
@@ -23,9 +23,19 @@ export class StudentService {
       'Authorization': `Bearer ${this.user.token}`
     }),
   };
+
+  httpOptions2 = {
+    headers: new HttpHeaders({
+      'Authorization': `Bearer ${this.user.token}`
+    }),
+  };
   
   getStudents(): Observable<Student[]>{
     return this.http.get<Student[]>(this.apiStudentsUrl,this.httpOptions);
+  }
+
+  uploadStudents(data: FormData){
+    return this.http.post<any>(`${this.apiStudentsUrl}/upload`,data,this.httpOptions2)
   }
   
 }

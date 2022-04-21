@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {AuthService} from '../../services/auth/auth.service'
-import { LoginRequest } from 'src/app/interfaces/LoginRequest';
+import { LoginRequest } from 'src/app/models/LoginRequest';
 
 @Component({
   selector: 'app-login',

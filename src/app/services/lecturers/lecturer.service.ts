@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginRequest } from 'src/app/interfaces/LoginRequest';
+import { LoginRequest } from 'src/app/models/LoginRequest';
 import { Observable } from 'rxjs';
-import { Lecturer } from 'src/app/interfaces/Lecturer';
+import { Lecturer } from 'src/app/models/Lecturer';
 import { AuthService } from '../auth/auth.service';
 
 

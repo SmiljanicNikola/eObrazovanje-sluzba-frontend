@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SemesterService } from 'src/app/services/semesters/semester.service';
-import { Semester } from 'src/app/interfaces/Semester';
+import { Semester } from 'src/app/models/Semester';
 
 @Component({
   selector: 'app-semesters',

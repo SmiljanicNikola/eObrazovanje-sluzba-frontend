@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginRequest } from 'src/app/interfaces/LoginRequest';
+import { LoginRequest } from 'src/app/models/LoginRequest';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
