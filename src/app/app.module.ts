@@ -10,6 +10,8 @@ import { LecturersComponent } from './components/lecturers/lecturers.component';
 import { SubjectsComponent } from './components/subjects/subjects/subjects.component';
 import { SemesterComponent } from './components/semesters/semesters.component';
 import { UploadUsersComponent } from './components/upload-users/upload-users.component';
+import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
+import { PaymentsComponent } from './components/payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UploadUsersComponent } from './components/upload-users/upload-users.com
     LecturersComponent,
     SubjectsComponent,
     SemesterComponent,
-    UploadUsersComponent
+    UploadUsersComponent,
+    PreExaminationObligationsComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,

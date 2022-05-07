@@ -3,11 +3,17 @@
       <th>Lastname</th>
       <th>Firstname</th>
       <th>Username</th>
+      <th>Adress</th>
+      <th>Index Number</th>
+      <th>Action</th>
     </tr>
     <tr *ngFor="let s of students">
       <td>{{ s.lastname }}</td>
       <td>{{ s.firstname }}</td>
       <td>{{ s.username }}</td>
+      <td>{{ s.adress }}</td>
+      <td>{{ s.indexNumber }}</td>
+      <td></td>
     </tr>
   </table>
 

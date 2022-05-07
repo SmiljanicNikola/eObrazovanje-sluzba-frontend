@@ -1,0 +1,17 @@
+<table id="payment-table">
+    <tr>
+      <th>Purpose of Payment</th>
+      <th>Amount</th>
+      <th>Date of Payment</th>
+      <th>Account</th>
+      <th>Purpose Of Payment</th>
+
+    </tr>
+    <tr *ngFor="let p of payments">
+      <td>{{ p.purposeOfPayment }}</td>
+      <td>{{ p.amount }}</td>
+      <td>{{ p.dateOfPayment}}</td>
+      <td> {{ p.account }}</td>
+      <td>{{ p.purposeOfPayment }}</td>
+    </tr>
+  </table>
