@@ -7,6 +7,9 @@
       <th>Adress</th>
       <th>Index Number</th>
       <th>Action</th>
+      <th>
+        Upload Students
+      </th>
     </tr>
     <tr *ngFor="let s of students">
       <td> {{ s.student_id }} </td>
@@ -20,11 +23,10 @@
         <button style="margin-left: 5px;" class="btn btn-info" (click)="updateStud(s.student_id)">Update</button>
         <button style="margin-left: 5px;" class="btn btn-primary" (click)="studentDetails(s.student_id)">View</button>
       </td>
-      
+      <td>
+        <app-upload-users></app-upload-users>
+      </td>      
     </tr>
     
   </table>
   
-
-
-<app-upload-users></app-upload-users>

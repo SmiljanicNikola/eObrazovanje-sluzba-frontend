@@ -22,8 +22,6 @@ export class StudentiComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentService.getStudents().subscribe((students) => this.students = students)
-
-    
   }
 
   public deleteStud(id:number){
@@ -35,7 +33,7 @@ export class StudentiComponent implements OnInit {
   }
 
   public updateStud(id:number){
-
+    this.router.navigate(['updateStudent', id]);
   }
 
   public studentDetails(id:number){
