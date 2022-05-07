@@ -37,5 +37,18 @@ export class StudentService {
   uploadStudents(data: FormData){
     return this.http.post<any>(`${this.apiStudentsUrl}/upload`,data,this.httpOptions2)
   }
+
+  deleteStudent(id: any): Observable<any>{
+    console.log(`http://localhost:8080/api/students/${id}`)
+    return this.http.delete(`${this.apiStudentsUrl}/${id}`, this.httpOptions);
+    //return this.http.delete(this.apiStudentsUrl+"/"+id, this.httpOptions);
+
+  }
+
+  getStudentById(id:number): Observable<any>{
+    return this.http.get(`${this.apiStudentsUrl}/${id}`, this.httpOptions);
+    
+  }
+
   
 }

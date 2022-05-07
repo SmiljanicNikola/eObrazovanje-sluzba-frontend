@@ -7,6 +7,7 @@ import { LecturersComponent } from './components/lecturers/lecturers.component';
 import { SubjectsComponent } from './components/subjects/subjects/subjects.component';
 import { SemesterComponent } from './components/semesters/semesters.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'lecturers', component: LecturersComponent },
   { path : 'subjects', component: SubjectsComponent },
   { path: 'semesters', component: SemesterComponent },
-  {path: 'payments', component: PaymentsComponent}
+  {path: 'payments', component: PaymentsComponent},
+  {path: 'studentDetails/:id', component: StudentDetailsComponent}
 ];
 
 @NgModule({

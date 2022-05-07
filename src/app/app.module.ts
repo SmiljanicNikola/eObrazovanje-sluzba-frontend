@@ -12,6 +12,7 @@ import { SemesterComponent } from './components/semesters/semesters.component';
 import { UploadUsersComponent } from './components/upload-users/upload-users.component';
 import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
 import { PaymentsComponent } from './components/payments/payments.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PaymentsComponent } from './components/payments/payments.component';
     SemesterComponent,
     UploadUsersComponent,
     PreExaminationObligationsComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,

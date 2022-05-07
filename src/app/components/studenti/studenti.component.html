@@ -1,5 +1,6 @@
 <table id="students-table">
     <tr>
+      <th>Id</th>
       <th>Lastname</th>
       <th>Firstname</th>
       <th>Username</th>
@@ -8,13 +9,22 @@
       <th>Action</th>
     </tr>
     <tr *ngFor="let s of students">
+      <td> {{ s.student_id }} </td>
       <td>{{ s.lastname }}</td>
       <td>{{ s.firstname }}</td>
       <td>{{ s.username }}</td>
       <td>{{ s.adress }}</td>
       <td>{{ s.indexNumber }}</td>
-      <td><button class="btn btn-danger">Delete</button></td>
+      <td>  
+        <button style="margin-left: 5px;" class="btn btn-danger" (click)="deleteStud(s.student_id)">Block</button>
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="updateStud(s.student_id)">Update</button>
+        <button style="margin-left: 5px;" class="btn btn-primary" (click)="studentDetails(s.student_id)">View</button>
+      </td>
+      
     </tr>
+    
   </table>
+  
+
 
 <app-upload-users></app-upload-users>
