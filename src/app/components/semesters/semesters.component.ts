@@ -14,7 +14,7 @@ export class SemesterComponent implements OnInit {
   constructor(private semesterService: SemesterService) { }
 
   ngOnInit(): void {
-    this.semesterService.getSemesters().subscribe((semesters) => this.semesters = semesters)
+    this.semesterService.getSemesters().subscribe((semesters) => {this.semesters = semesters; console.log(semesters[0])})
   }
 
 }

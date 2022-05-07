@@ -11,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class SubjectService {
 
-  private apiUrl = 'http://localhost:8080/api/subject';
+  private apiUrl = 'http://localhost:8080/api/subjects';
 
   constructor(private http: HttpClient, private authService:AuthService) { }
 

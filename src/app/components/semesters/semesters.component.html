@@ -1,10 +1,10 @@
-<table id="semester-table">
+<table id="semesters-table">
     <tr>
       <th>Semester Number</th>
-      <th>Department Id</th>
+      <th>Department Name</th>
     </tr>
     <tr *ngFor="let s of semesters">
-      <td>{{ s.id }}</td>
-      <td>{{ s.department_id }}</td>
+      <td>{{ s.semesterNumber }}</td>
+      <td>{{ s.department.name }}</td>
     </tr>
   </table>
