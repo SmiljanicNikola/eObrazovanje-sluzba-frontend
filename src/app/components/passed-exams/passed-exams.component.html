@@ -1,0 +1,15 @@
+<table id="exams-table">
+  <tr>
+    <th>Name</th>
+    <th>Silabus</th>
+    <th>Student</th>
+    <th>Passed</th>
+  </tr>
+  <tr *ngFor="let s of exams">
+    <td> {{ s.subjectPerformance.subject.name }} </td>
+    <td>{{ s.subjectPerformance.subject.syllabus }}</td>
+    <td>{{ s.firstname }}</td>
+    <td>{{ s.username }}</td>
+  </tr>
+  
+</table>

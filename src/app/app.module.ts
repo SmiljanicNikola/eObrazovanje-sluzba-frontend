@@ -14,6 +14,7 @@ import { PreExaminationObligationsComponent } from './components/pre-examination
 import { PaymentsComponent } from './components/payments/payments.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
+import { PassedExamsComponent } from './components/passed-exams/passed-exams.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UpdateStudentComponent } from './components/update-student/update-stude
     PreExaminationObligationsComponent,
     PaymentsComponent,
     StudentDetailsComponent,
-    UpdateStudentComponent
+    UpdateStudentComponent,
+    PassedExamsComponent
   ],
   imports: [
     BrowserModule,
