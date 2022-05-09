@@ -6,4 +6,5 @@ export class Student {
     indexNumber: string;
     adress: string;
     blocked:boolean;
+    accountId:number;
   }

@@ -9,6 +9,7 @@ import { SemesterComponent } from './components/semesters/semesters.component';
 import { PaymentsComponent } from './components/payments/payments.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
+import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path: 'semesters', component: SemesterComponent },
   {path: 'payments', component: PaymentsComponent},
   {path: 'studentDetails/:id', component: StudentDetailsComponent},
-  {path: 'updateStudent/:id', component: UpdateStudentComponent}
+  {path: 'updateStudent/:id', component: UpdateStudentComponent},
+  {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
+
 ];
 
 @NgModule({
