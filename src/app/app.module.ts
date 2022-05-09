@@ -16,6 +16,7 @@ import { StudentDetailsComponent } from './components/student-details/student-de
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
 import { PassedExamsComponent } from './components/passed-exams/passed-exams.component';
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
+import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BankAccountDetailsComponent } from './components/bank-account-details/b
     StudentDetailsComponent,
     UpdateStudentComponent,
     PassedExamsComponent,
-    BankAccountDetailsComponent
+    BankAccountDetailsComponent,
+    PaymentHistoryComponent
   ],
   imports: [
     BrowserModule,

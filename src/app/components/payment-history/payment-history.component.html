@@ -1,0 +1,20 @@
+<div class="center">
+    <h2>Payment History Of Student {{user.username}} </h2>
+</div>
+<table id="payment-table">
+    <tr>
+      <th>Purpose of Payment</th>
+      <th>Paid amount</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let p of payments">
+      <td> {{ p.purposeOfPayment }} </td>
+      <td>{{ p.amount }}</td>
+      <td>{{ p.dateOfPayment }}</td>
+      <td>
+        <button style="margin-left: 10px;" class="btn btn-warning">Check Transaction</button><br>
+      </td>
+    </tr>
+    
+  </table>

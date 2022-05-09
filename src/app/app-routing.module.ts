@@ -10,6 +10,7 @@ import { PaymentsComponent } from './components/payments/payments.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
+import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path: 'studentDetails/:id', component: StudentDetailsComponent},
   {path: 'updateStudent/:id', component: UpdateStudentComponent},
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
+  {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
+
 
 ];
 

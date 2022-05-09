@@ -1,18 +1,21 @@
 <div class="center">
-    <h2 style="margin-left: auto; margin-right: auto;">Bank Details</h2> 
+    <h2 style="margin-left: auto; margin-right: auto;">Bank Details of user {{user.username}} </h2> 
     
     <hr/>
     <div *ngIf="account">
       <div class="field">
-        <label><b>Id: </b></label> {{account.account_id}}
+        <label><b>Account Id of Student {{ user.username}}: </b></label> {{account.account_id}}
       </div>
       <div  class="field">
-        <label><b>Current Money Balance: </b></label> {{account.accountBallance}}
+        <label><b>Current Money Balance: </b></label> {{account.accountBallance }} $
       </div>
     </div>
     
     <br>
     <br>
-   
+    <div class="buttons">
+      <button style="margin-left: 10px;" (click)="checkPaymentHistory(account.account_id)"class="btn btn-info">Payment History</button><br>
+  
+  </div>
     
     </div>
