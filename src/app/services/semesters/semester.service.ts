@@ -13,20 +13,10 @@ export class SemesterService {
 
   private apiStudentsUrl = `${environment.apiURL}/api/semester`;
 
-  constructor(private http: HttpClient, private authService:AuthService) { }
+  constructor(private http: HttpClient) { }
 
-  user = this.authService.getToken()
-
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.user.token}`
-    }),
-  };
-  
   getSemesters(): Observable<Semester[]>{
-    return this.http.get<Semester[]>(this.apiStudentsUrl,this.httpOptions);
+    return this.http.get<Semester[]>(this.apiStudentsUrl);
   }
   
 }

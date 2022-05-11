@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Subject } from 'src/app/models/Subject';
-import { AuthService } from '../auth/auth.service';
 import {environment} from '../../../environments/environment'
 
 
@@ -13,19 +12,11 @@ export class SubjectService {
 
   private apiUrl = `${environment.apiURL}/api/subjects`;
 
-  constructor(private http: HttpClient, private authService:AuthService) { }
+  constructor(private http: HttpClient) { }
 
-  user = this.authService.getToken()
-  // koristiti interseptore umesto ovoga
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.user.token}`
-    }),
-  };
 
   getSubjcts(): Observable<Subject[]>{
-    return this.http.get<Subject[]>(this.apiUrl,this.httpOptions)
+    return this.http.get<Subject[]>(this.apiUrl)
   }
 }
 

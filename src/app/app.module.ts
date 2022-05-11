@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,8 @@ import { UpdateStudentComponent } from './components/update-student/update-stude
 import { PassedExamsComponent } from './components/passed-exams/passed-exams.component';
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
 import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
+import { JwtInterceptor } from './services/auth/interceptor.service';
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,14 @@ import { PaymentHistoryComponent } from './components/payment-history/payment-hi
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
