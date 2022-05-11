@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginRequest } from 'src/app/models/LoginRequest';
 import { Observable } from 'rxjs';
+import {environment} from '../../../environments/environment'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8080/api/auth/login';
+  private apiUrl = `${environment.apiURL}/api/auth/login`;
 
   constructor(private http: HttpClient) { }
 

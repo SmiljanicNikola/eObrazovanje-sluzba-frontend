@@ -4,13 +4,14 @@ import { Student } from 'src/app/models/Student';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
+import {environment} from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
-  private apiStudentsUrl = 'http://localhost:8080/api/students';
+  private apiStudentsUrl = `${environment.apiURL}/api/students`;
 
   constructor(private http: HttpClient, private authService:AuthService) { }
 

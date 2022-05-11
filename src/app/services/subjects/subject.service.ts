@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Subject } from 'src/app/models/Subject';
 import { AuthService } from '../auth/auth.service';
-
+import {environment} from '../../../environments/environment'
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class SubjectService {
 
-  private apiUrl = 'http://localhost:8080/api/subjects';
+  private apiUrl = `${environment.apiURL}/api/subjects`;
 
   constructor(private http: HttpClient, private authService:AuthService) { }
 

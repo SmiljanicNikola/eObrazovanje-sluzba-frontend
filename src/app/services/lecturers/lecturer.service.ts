@@ -4,7 +4,7 @@ import { LoginRequest } from 'src/app/models/LoginRequest';
 import { Observable } from 'rxjs';
 import { Lecturer } from 'src/app/models/Lecturer';
 import { AuthService } from '../auth/auth.service';
-
+import {environment} from '../../../environments/environment'
 
 
 @Injectable({
@@ -12,7 +12,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class LecturerService {
 
-  private apiUrl = 'http://localhost:8080/api/lecturers';
+  private apiUrl = `${environment.apiURL}/api/lecturers`;
 
   constructor(private http: HttpClient, private authService:AuthService) { }
 

@@ -4,14 +4,14 @@ import { AuthService } from '../auth/auth.service';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Account } from 'src/app/models/Account';
-
+import {environment} from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private apiAccountsUrl = 'http://localhost:8080/api/accounts';
+  private apiAccountsUrl = `${environment.apiURL}/api/accounts`;
 
   id:number;
   account: Account;
