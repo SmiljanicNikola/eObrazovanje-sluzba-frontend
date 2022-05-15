@@ -11,6 +11,7 @@ import { StudentDetailsComponent } from './components/student-details/student-de
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
 import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
+import { ExamDatesComponent } from './components/exam-dates/exam-dates.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -24,6 +25,8 @@ const routes: Routes = [
   {path: 'updateStudent/:id', component: UpdateStudentComponent},
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
   {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
+  { path: 'examDates', component: ExamDatesComponent },
+
 
 
 ];

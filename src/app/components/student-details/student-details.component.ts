@@ -23,22 +23,19 @@ export class StudentDetailsComponent implements OnInit {
 
     this.id = this.route.snapshot.params['id'];
 
-    this.studentService.getStudentById(this.id).subscribe(data=>{
-      console.log(data)
-      this.student = data
-    }, error=> console.log(error));
+    this.studentService.getStudentById(this.id).subscribe(
+    {
+      next: data => this.student = data , 
+      error: error => console.log(error)
+    }
+    );
   }
   list(){
     this.router.navigate(['studenti']);
   }
   
   checkBank(id:number){
-    let response = this.accountService.getAccountByStudentId(id);
-    response.subscribe((account)=> this.account = account)
-    console.log(this.account);
-    console.log(this.student.student_id)
+    this.accountService.getAccountByStudentId(id).subscribe((account)=> this.account = account);
     this.router.navigate(['bankAccountDetails', id]);
-
-
   }
 }

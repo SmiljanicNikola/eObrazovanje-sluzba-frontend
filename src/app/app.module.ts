@@ -19,6 +19,7 @@ import { BankAccountDetailsComponent } from './components/bank-account-details/b
 import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
 import { JwtInterceptor } from './services/auth/interceptor.service';
 import { AuthService } from './services/auth/auth.service';
+import { ExamDatesComponent } from './components/exam-dates/exam-dates.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AuthService } from './services/auth/auth.service';
     UpdateStudentComponent,
     PassedExamsComponent,
     BankAccountDetailsComponent,
-    PaymentHistoryComponent
+    PaymentHistoryComponent,
+    ExamDatesComponent
   ],
   imports: [
     BrowserModule,

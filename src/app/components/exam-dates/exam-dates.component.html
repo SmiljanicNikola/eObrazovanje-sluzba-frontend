@@ -1,0 +1,23 @@
+<table id="examDates-table">
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>ExamDate name</th>
+      <th>Lecturer</th>
+      <th>Subject</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let ed of examDates">
+      <td> {{ ed.id }} </td>
+      <td>{{ ed.date }}</td>
+      <td>{{ ed.name }}</td>
+      <td>{{ ed.takingExam.lecturer.name + " " + ed.takingExam.lecturer.surname }}</td>
+      <td>{{ ed.takingExam.attendingCourses.subjectPerformance.subject.name }}</td>
+      <td>  
+        <button style="margin-left: 5px;" class="btn btn-danger">Remove</button>
+        <button style="margin-left: 5px;" class="btn btn-info">Prijavi</button>
+      </td>
+      <td>
+        
+      </td>      
+    </tr>

@@ -1,3 +1,5 @@
+import { StudentHistory } from "./StudentHistory";
+
 export class Student {
     student_id: number;
     username: string;
@@ -7,4 +9,5 @@ export class Student {
     adress: string;
     blocked:boolean;
     accountId:number;
+    studentHistory:StudentHistory;
   }
