@@ -1,4 +1,5 @@
 export interface Lecturer{
+  lecturer_id:number,
   name:string,
   surname:string,
   username:string,

@@ -29,6 +29,9 @@ export class StudentService {
     return this.http.get(`${this.apiStudentsUrl}/${id}`);
     
   }
+  getStudentByUsername(username: string): Observable<any>{
+    return this.http.get(`${this.apiStudentsUrl}/username/${username}`);
+  }
 
   
 }

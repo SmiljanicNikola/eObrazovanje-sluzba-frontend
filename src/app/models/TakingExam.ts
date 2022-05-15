@@ -10,3 +10,21 @@ export class TakingExam {
     attendingCourses:AttendingCourse;
     
   }
+
+  export class TakingExam2 {
+    grade:number;
+    passed:boolean;
+    deleted:boolean;
+    lecturer:Lecturer;
+    attendingCourses:AttendingCourse;
+    
+  }
+
+  export class TakingExamRequest {
+    grade:number;
+    passed:boolean;
+    lecturerId:number;
+    attendingCoursesId:number;
+    deleted:boolean;
+    
+  }

@@ -15,7 +15,7 @@
       <td>{{ ed.takingExam.attendingCourses.subjectPerformance.subject.name }}</td>
       <td>  
         <button style="margin-left: 5px;" class="btn btn-danger">Remove</button>
-        <button style="margin-left: 5px;" class="btn btn-info">Prijavi</button>
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="takeExam(ed.id, user, ed.takingExam.lecturer.lecturer_id, ed.takingExam.attendingCourses.attending_courses_id)">Prijavi</button>
       </td>
       <td>
         

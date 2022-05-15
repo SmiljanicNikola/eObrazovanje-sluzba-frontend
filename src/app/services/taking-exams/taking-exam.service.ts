@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TakingExam } from 'src/app/models/TakingExam';
+import { TakingExam, TakingExam2, TakingExamRequest } from 'src/app/models/TakingExam';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -20,6 +20,12 @@ export class TakingExamService {
   getTakingExamById(id:number):Observable<any>{
     return this.http.get(`${this.apiTakingExamsUrl}/${id}`);
 
+  }
+
+  createTakingExam(takingExam: TakingExamRequest):Observable<any>{
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(takingExam);
+    return this.http.post(`${this.apiTakingExamsUrl}`, body, {headers});
   }
 
 }
