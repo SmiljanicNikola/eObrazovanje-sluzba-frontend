@@ -1,5 +1,5 @@
 export interface Lecturer{
-  lecturer_id:number,
+  lecturer_Id:number,
   name:string,
   surname:string,
   username:string,
@@ -8,5 +8,5 @@ export interface Lecturer{
   jmbg:string,
   pay:number,
   blocked:boolean,
-  lecturer_Id:number
+
 }

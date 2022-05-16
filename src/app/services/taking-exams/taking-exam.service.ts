@@ -22,10 +22,9 @@ export class TakingExamService {
 
   }
 
-  createTakingExam(takingExam: TakingExamRequest):Observable<any>{
-    const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(takingExam);
-    return this.http.post(`${this.apiTakingExamsUrl}`, body, {headers});
+  createTakingExam(takingExam: any):Observable<any>{
+    //const body=JSON.stringify(takingExam);
+    return this.http.post(`${this.apiTakingExamsUrl}`, takingExam);
   }
 
 }

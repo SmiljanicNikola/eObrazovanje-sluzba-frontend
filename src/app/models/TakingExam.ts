@@ -14,9 +14,9 @@ export class TakingExam {
   export class TakingExam2 {
     grade:number;
     passed:boolean;
-    deleted:boolean;
     lecturer:Lecturer;
     attendingCourses:AttendingCourse;
+    deleted:boolean;
     
   }
 

@@ -33,16 +33,18 @@ export class ExamDatesComponent implements OnInit {
     this.examDateService.getExamDates().subscribe((examDates) => this.examDates = examDates)
   }
 
-  takeExam(id:number, user:any, lecturerId:number, attendingCoursesId:number ){
+  takeExam(id:number, user:any, lecturer:any, attendingCourses:any ){
     console.log(id);
-    console.log(user.username);
+    console.log(lecturer);
+    console.log(attendingCourses);
+
     console.log(this.studentService.getStudentByUsername(user.username));
 
     this.takingExam = {
       grade:0,
       passed:false,
-      lecturerId:lecturerId,
-      attendingCoursesId:attendingCoursesId,
+      lecturerId:lecturer.lecturer_Id,
+      attendingCoursesId:attendingCourses.attending_courses_id,
       deleted:false
     }
     this.takingExamService.createTakingExam(this.takingExam);
