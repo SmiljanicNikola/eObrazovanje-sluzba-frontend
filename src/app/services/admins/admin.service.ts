@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LoginRequest } from 'src/app/models/LoginRequest';
 import { Observable } from 'rxjs';
-import { Subject } from 'src/app/models/Subject';
+import { Admin} from "src/app/models/Admin";
 import { AuthService } from '../auth/auth.service';
 
 
@@ -9,14 +10,14 @@ import { AuthService } from '../auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class SubjectService {
+export class AdminService {
 
-  private apiSubjectUrl = 'http://localhost:8080/api/subjects';
+  private apiUrl = 'http://localhost:8080/api/admins';
 
   constructor(private http: HttpClient, private authService:AuthService) { }
 
   user = this.authService.getToken()
-
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -24,13 +25,8 @@ export class SubjectService {
     }),
   };
 
-  getSubjcts(): Observable<Subject[]>{
-    return this.http.get<Subject[]>(this.apiSubjectUrl,this.httpOptions)
-  }
-
-  getSubjectById(id:number): Observable<any>{
-    return this.http.get(`${this.apiSubjectUrl}/${id}`, this.httpOptions);
-    
+  getAdmins(): Observable<Admin[]>{
+    return this.http.get<Admin[]>(this.apiUrl,this.httpOptions)
   }
 }
 

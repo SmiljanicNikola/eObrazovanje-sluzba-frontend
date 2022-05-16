@@ -1,0 +1,12 @@
+<table id="admins-table">
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+    </tr>
+    <tr *ngFor="let l of admins">
+      <td>{{ l.name }}</td>
+      <td>{{ l.surname }}</td>
+      <td>{{ l.username }}</td>
+    </tr>
+  </table>

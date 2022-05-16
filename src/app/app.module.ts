@@ -15,6 +15,7 @@ import { PaymentsComponent } from './components/payments/payments.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
 import { PassedExamsComponent } from './components/passed-exams/passed-exams.component';
+import { AdminsComponent } from './components/admins/admins.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PassedExamsComponent } from './components/passed-exams/passed-exams.com
     PaymentsComponent,
     StudentDetailsComponent,
     UpdateStudentComponent,
-    PassedExamsComponent
+    PassedExamsComponent,
+    AdminsComponent,
   ],
   imports: [
     BrowserModule,
