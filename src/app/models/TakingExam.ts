@@ -1,6 +1,14 @@
 import { AttendingCourse } from "./AttendingCourse";
 import { Lecturer } from "./Lecturer";
 
+export interface TakingExamm {
+  grade:number,
+  passed:boolean,
+  lecturerId:number,
+  attendingCoursesId:number,
+  deleted:boolean
+}
+
 export class TakingExam {
     taking_exam_id: number;
     grade:number;

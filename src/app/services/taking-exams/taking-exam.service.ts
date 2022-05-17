@@ -1,8 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TakingExam, TakingExam2, TakingExamRequest } from 'src/app/models/TakingExam';
+import { TakingExam, TakingExam2, TakingExamm, TakingExamRequest } from 'src/app/models/TakingExam';
 import { environment } from 'src/environments/environment';
+
+const headers = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +28,9 @@ export class TakingExamService {
 
   }
 
-  createTakingExam(takingExam: any):Observable<any>{
-    //const body=JSON.stringify(takingExam);
-    return this.http.post(`${this.apiTakingExamsUrl}`, takingExam);
+  createTakingExam(takingExam: TakingExamm) : Observable<TakingExamm>{
+    return this.http.post<TakingExamm>(this.apiTakingExamsUrl, takingExam, headers);
   }
+
 
 }
