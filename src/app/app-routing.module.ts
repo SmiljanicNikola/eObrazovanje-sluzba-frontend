@@ -12,6 +12,7 @@ import { UpdateStudentComponent } from './components/update-student/update-stude
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
 import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
 import { ExamDatesComponent } from './components/exam-dates/exam-dates.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -26,8 +27,7 @@ const routes: Routes = [
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
   {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
   { path: 'examDates', component: ExamDatesComponent },
-
-
+  {path: 'home', component: HomeComponent}
 
 ];
 

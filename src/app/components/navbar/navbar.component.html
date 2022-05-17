@@ -1,0 +1,32 @@
+<mat-toolbar style="height: 80px; background-color: rgb(59, 59, 233);">
+    <div class="spacer"></div>
+    <div *ngIf="user.roles == 'ADMIN'">
+        <ul>
+            <li><a href="studenti">Students</a></li>
+            <li><a href="subjects">Subjects</a></li>
+            <li><a href="examDates">Exam Dates</a></li>
+            <li><a href="lecturers">Lecturers</a></li>
+            <li><a href="login" (click)="logout()">Log out</a></li>
+          </ul>  
+    </div>
+    <div *ngIf="user.roles == 'STUDENT'">
+        <ul>
+            <li><a href="studenti">My Bank</a></li>
+            <li><a href="subjects">Profile</a></li>
+            <li><a href="examDates">Schedule</a></li>
+            <li><a href="examDates">Exam Dates</a></li>
+            <li><a href="login" (click)="logout()">Log out</a></li>
+          </ul>  
+    </div>
+    <div *ngIf="user.roles == 'LECTURER'">
+        <ul>
+            <li><a href="studenti">Students</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li><a href="examDates">Schedule</a></li>
+            <li><a href="examDates">Exam Dates</a></li>
+            <li><a href="login" (click)="logout()">Log out</a></li>
+          </ul>
+    </div>
+    
+</mat-toolbar>
+<br>

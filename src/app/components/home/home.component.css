@@ -1,0 +1,16 @@
+.center{
+    text-align: center;
+}
+.field{
+    margin-top: 15px;
+
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.field label{
+    font-size: 21px;
+}

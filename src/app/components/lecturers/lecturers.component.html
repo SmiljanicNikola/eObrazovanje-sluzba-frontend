@@ -7,6 +7,7 @@
     <th>JMBG</th>
     <th>Pay</th>
     <th>Is Blocked</th>
+    <th>Actions</th>
   </tr>
   <tr *ngFor="let l of lecturers">
     <td>{{ l.name }}</td>
@@ -16,5 +17,12 @@
     <td>{{ l.jmbg }}</td>
     <td>{{ l.pay }}</td>
     <td>{{ l.blocked }}</td>
+    <td>  
+      <button style="margin-left: 5px;" class="btn btn-danger">Block</button>
+      <button style="margin-left: 5px;" class="btn btn-info">Update</button>
+      <button style="margin-left: 5px;" class="btn btn-primary">View Schedule</button>
+    </td>
   </tr>
+
+
 </table>

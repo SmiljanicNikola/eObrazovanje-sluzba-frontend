@@ -18,8 +18,16 @@ import { PassedExamsComponent } from './components/passed-exams/passed-exams.com
 import { BankAccountDetailsComponent } from './components/bank-account-details/bank-account-details.component';
 import { PaymentHistoryComponent } from './components/payment-history/payment-history.component';
 import { JwtInterceptor } from './services/auth/interceptor.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { AuthService } from './services/auth/auth.service';
 import { ExamDatesComponent } from './components/exam-dates/exam-dates.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import { HomeComponent } from './components/home/home.component';
+
+
 
 @NgModule({
   declarations: [
@@ -37,14 +45,20 @@ import { ExamDatesComponent } from './components/exam-dates/exam-dates.component
     PassedExamsComponent,
     BankAccountDetailsComponent,
     PaymentHistoryComponent,
-    ExamDatesComponent
+    ExamDatesComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     AuthService,
