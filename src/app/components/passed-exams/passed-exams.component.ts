@@ -8,13 +8,17 @@ import {ExamsService} from '../../services/exams/exams.service'
 })
 export class PassedExamsComponent implements OnInit {
   exams: any[] = [];
+  username:String;
 
   constructor(private examsService:ExamsService) { }
 
   ngOnInit(): void {
-    this.examsService.getExams('danijel').subscribe((exams) => this.exams = exams)
+    const {username} = JSON.parse(localStorage.getItem('user') || '{}')
+    this.username = username;
+    this.examsService.getExams(username).subscribe((exams) => this.exams = exams)
+    
   }
-
+  
   public studentExams(username:string){
     console.log(username);
 
