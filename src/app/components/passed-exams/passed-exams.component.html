@@ -9,15 +9,16 @@
   </tr>
 
   <tr *ngFor="let s of exams">
-    <ng-container *ngIf="s.passed && s.attendingCourses.student.username == username">
-      <td> {{ s.attendingCourses.student.username }} </td>
+    <ng-container
+      *ngIf="s.passed && s.attendingCourses.student.username == username"
+    >
+      <td>{{ s.attendingCourses.student.username }}</td>
       <td>{{ s.attendingCourses.subjectPerformance.subject.name }}</td>
       <td>{{ s.attendingCourses.subjectPerformance.subject.syllabus }}</td>
       <td>{{ s.lecturer.username }}</td>
       <td>{{ s.grade }}</td>
     </ng-container>
   </tr>
-  
 </table>
 
 <h2>Unpassed Exams</h2>
@@ -26,16 +27,24 @@
     <th>Student</th>
     <th>Name</th>
     <th>Silabus</th>
-    <th>Lecturer</th>
+    <th>Exam Date</th>
+    <th>Action</th>
   </tr>
 
-  <tr *ngFor="let s of exams">
-    <ng-container *ngIf="!s.passed && s.attendingCourses.student.username == username">
-      <td> {{ s.attendingCourses.student.username }} </td>
-      <td>{{ s.attendingCourses.subjectPerformance.subject.name }}</td>
-      <td>{{ s.attendingCourses.subjectPerformance.subject.syllabus }}</td>
-      <td>{{ s.lecturer.username }}</td>
-    </ng-container>
+  <tr *ngFor="let s of untakedExams">
+    <td>{{ s.student.username }}</td>
+    <td>{{ s.subjectPerformance.subject.name }}</td>
+    <td>{{ s.subjectPerformance.subject.syllabus }}</td>
+    <td>
+      <select [ngModel]="'Choose a exam date'" (ngModelChange)="onChange($event)" class="browser-default custom-select">
+        <option selected disabled>Choose a exam date</option>
+        <option *ngFor="let e of examDates" [ngValue]="e">{{e.name}}</option>
+      </select>
+    </td>
+    <td>
+      <button class="btn btn-success" (click)="TakeExam(s)">
+        Take
+      </button>
+    </td>
   </tr>
-  
 </table>

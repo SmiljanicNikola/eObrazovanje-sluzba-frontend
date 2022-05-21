@@ -7,13 +7,18 @@ import {environment} from '../../../environments/environment'
   providedIn: 'root'
 })
 export class ExamsService {
-
+ 
   private apiExamsUrl = `${environment.apiURL}/api/attendingCourses/student/`;
+  private apiExamsTakedUrl = `${environment.apiURL}/api/attendingCourses`
 
   constructor(private http: HttpClient) { }
 
   getExams(id: string): Observable<any[]>{
     return this.http.get<any[]>(this.apiExamsUrl + id);
+  }
+
+  getUntakedExams(): Observable<any[]>{
+    return this.http.get<any[]>(this.apiExamsTakedUrl);
   }
 }
  
