@@ -24,17 +24,5 @@ export class ExamDatesComponent implements OnInit {
     this.examDateService.getExamDates().subscribe((examDates) => this.examDates = examDates)
   }
 
-  takeExam(lecturer:Lecturer, attendingCourses:AttendingCourse ){
-
-    let obj:TakingExamm = {
-      grade:0,
-      passed:false,
-      lecturerId:lecturer.lecturer_Id,
-      attendingCoursesId:attendingCourses.attending_courses_id,
-      deleted:false
-    }
-
-    this.takingExamService.createTakingExam(obj).subscribe((value)=>console.log(value));
-  }
 
 }

@@ -6,7 +6,8 @@ export interface TakingExamm {
   passed:boolean,
   lecturerId:number,
   attendingCoursesId:number,
-  deleted:boolean
+  deleted:boolean,
+  examDateId:number;
 }
 
 export class TakingExam {

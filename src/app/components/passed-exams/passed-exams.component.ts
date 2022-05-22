@@ -44,12 +44,14 @@ export class PassedExamsComponent implements OnInit {
     const data = this.findLecturerOnTheSubjects(exam.subjectPerformance.subject_performance_id)
     await data.then(res => this.lecturerOnTheSubject = res)
 
+
     let obj:TakingExamm = {
       grade:0,
       passed:false,
       lecturerId:this.lecturerOnTheSubject.lecturer.lecturer_Id,
       attendingCoursesId:exam.attending_courses_id,
-      deleted:false
+      deleted:false,
+      examDateId:1
     }
 
     this.takingExamService.createTakingExam(obj).subscribe((value)=>console.log(value));
