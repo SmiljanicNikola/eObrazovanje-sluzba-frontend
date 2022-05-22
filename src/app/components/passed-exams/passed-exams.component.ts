@@ -17,7 +17,7 @@ export class PassedExamsComponent implements OnInit {
   untakedExams: any[] = [];
   examDates: any[] = [];
   username: string;
-  option: string;
+  option: any;
   lecturerOnTheSubject: any;
 
   constructor(
@@ -43,15 +43,15 @@ export class PassedExamsComponent implements OnInit {
   async TakeExam(exam: any){
     const data = this.findLecturerOnTheSubjects(exam.subjectPerformance.subject_performance_id)
     await data.then(res => this.lecturerOnTheSubject = res)
-
-
+ 
+  
     let obj:TakingExamm = {
       grade:0,
       passed:false,
       lecturerId:this.lecturerOnTheSubject.lecturer.lecturer_Id,
       attendingCoursesId:exam.attending_courses_id,
       deleted:false,
-      examDateId:1
+      examDateId:this.option.id
     }
 
     this.takingExamService.createTakingExam(obj).subscribe((value)=>console.log(value));
