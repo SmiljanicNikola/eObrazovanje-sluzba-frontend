@@ -10,7 +10,7 @@
     <th>Action</th>
   </tr>
 
-  <tr *ngFor="let te of takedExams">
+  <tr *ngFor="let te of takenExams">
     <ng-container
       *ngIf="te.lecturer.username == username"
     >
@@ -21,7 +21,7 @@
       <td>{{ te.grade }}</td>
       <td>{{ te.passed }}</td>
       <td>
-        <button style="margin-left: 5px;" class="btn btn-info">Update</button>
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="updateExam(te.taking_exam_id)">Update</button>
         <button style="margin-left: 5px;" class="btn btn-primary">View</button>
       </td>  
     

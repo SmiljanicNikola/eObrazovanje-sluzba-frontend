@@ -14,6 +14,7 @@ import { PaymentHistoryComponent } from './components/payment-history/payment-hi
 import { ExamDatesComponent } from './components/exam-dates/exam-dates.component';
 import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
+import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -29,7 +30,9 @@ const routes: Routes = [
   {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
   { path: 'examDates', component: ExamDatesComponent },
   {path: 'home', component: HomeComponent},
-  {path: 'lecturersTakedExam', component:LecturersExamsComponent}
+  {path: 'lecturersTakenExam', component:LecturersExamsComponent},
+  {path: 'updateExam/:id', component: UpdateExamComponent}
+
 
 ];
 

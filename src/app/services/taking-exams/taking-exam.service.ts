@@ -10,6 +10,13 @@ const headers = {
   }),
 };
 
+const headers2 = {
+  headers: new HttpHeaders({
+    'method':'PUT',
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,5 +39,9 @@ export class TakingExamService {
     return this.http.post<TakingExamm>(this.apiTakingExamsUrl, takingExam, headers);
   }
 
+  updateTakingExam(id:number,takingExam: TakingExam) : Observable<TakingExam>{
+    return this.http.put<TakingExam>(`${this.apiTakingExamsUrl}/${id}`, JSON.stringify(takingExam),headers2);
 
+  }
+ 
 }

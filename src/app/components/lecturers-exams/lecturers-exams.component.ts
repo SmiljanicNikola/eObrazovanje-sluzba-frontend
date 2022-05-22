@@ -14,7 +14,7 @@ export class LecturersExamsComponent implements OnInit {
 
   username: string;
   lecturer: any;
-  takedExams: any[] = [];
+  takenExams: any[] = [];
 
   constructor(
       private route: ActivatedRoute,
@@ -26,7 +26,7 @@ export class LecturersExamsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.takingExamService.getTakingExams().subscribe((exams) => this.takedExams = exams)
+    this.takingExamService.getTakingExams().subscribe((exams) => this.takenExams = exams)
 
     const { username } = JSON.parse(localStorage.getItem('user') || '{}');
     this.username = username;
@@ -39,8 +39,9 @@ export class LecturersExamsComponent implements OnInit {
     //ISPRAVNO this.lecturerService.getLecturerByUsername(username).subscribe((value)=>console.log(value));
   }
 
-  async findLecturersTakedExams(id: string){
-    
+  public updateExam(id:number){
+    console.log(id);
+    this.router.navigate(['updateExam', id]);
   }
 
 }
