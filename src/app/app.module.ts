@@ -26,6 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
+import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
+import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 
 
 
@@ -48,7 +50,9 @@ import { HomeComponent } from './components/home/home.component';
     ExamDatesComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LecturersExamsComponent,
+    UpdateExamComponent
   ],
   imports: [
     BrowserModule,

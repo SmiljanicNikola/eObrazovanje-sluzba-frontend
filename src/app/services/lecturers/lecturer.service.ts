@@ -17,4 +17,8 @@ export class LecturerService {
   getLecturers(): Observable<Lecturer[]>{
     return this.http.get<Lecturer[]>(this.apiUrl)
   }
+
+  getLecturerByUsername(username: string): Observable<any>{
+    return this.http.get(`${this.apiUrl}/username/${username}`);
+  }
 }
