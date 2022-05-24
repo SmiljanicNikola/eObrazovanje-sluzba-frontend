@@ -3,6 +3,7 @@ import { StudentHistory } from "./StudentHistory";
 export class Student {
     student_id: number;
     username: string;
+    password: string;
     firstname: string;
     lastname: string;
     indexNumber: string;

@@ -1,0 +1,34 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Add Student</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" [(ngModel)]="student.username" id="username" required name="username">
+            </div>
+            <div class="form-group">
+                <label for="name">Firstname</label>
+                <input type="text" class="form-control" [(ngModel)]="student.firstname" id="firstname" required name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="name">Lastname</label>
+                <input type="text" class="form-control" [(ngModel)]="student.lastname" id="lastname" required name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="name">Password</label>
+                <input type="text" class="form-control" [(ngModel)]="student.password" id="password" required name="password">
+            </div>
+            <div class="form-group">
+                <label for="name">indexNumber</label>
+                <input type="text" class="form-control" [(ngModel)]="student.indexNumber" id="indexNumber" required name="indexNumber">
+            </div>
+            <div class="form-group">
+                <label for="name">JMBG</label>
+                <input type="text" class="form-control" [(ngModel)]="student.jmbg" id="jmbg" required name="jmbg">
+            </div>
+            <div class="form-group">
+                <label for="name">Adress</label>
+                <input type="text" class="form-control" [(ngModel)]="student.adress" id="adress" required name="adress">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+</div>

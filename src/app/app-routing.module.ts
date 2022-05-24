@@ -17,11 +17,13 @@ import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
+import { CreateStudentsComponent } from './components/create-students/create-students.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '',pathMatch:'full', redirectTo:'login'},
   { path: 'login', component: LoginComponent },
   { path: 'studenti', component: StudentiComponent },
+  { path: 'addStudent', component: CreateStudentsComponent},
   { path: 'lecturers', component: LecturersComponent },
   { path : 'subjects', component: SubjectsComponent },
   { path: 'semesters', component: SemesterComponent },
