@@ -28,6 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 
 
@@ -52,7 +53,8 @@ import { UpdateExamComponent } from './components/update-exam/update-exam.compon
     FooterComponent,
     HomeComponent,
     LecturersExamsComponent,
-    UpdateExamComponent
+    UpdateExamComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

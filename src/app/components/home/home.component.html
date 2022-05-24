@@ -26,9 +26,9 @@
         </div>
         <div class="buttons">
 
-          <button style="margin-left: 10px;" (click)="checkBank(student.student_id)"class="btn btn-info">Check Bank Account</button><br>
+          <button style="margin-left: 10px;" (click)="checkBank(student.student_id)" class="btn btn-info">Check Bank Account</button><br>
           <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
-          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+          <button style="margin-left: 10px;" (click)="changePassword(user.id)" class="btn btn-danger">Change Password</button><br>
         </div>
 
       <br>
@@ -36,4 +36,47 @@
   <app-passed-exams></app-passed-exams>
 
 </div>
+
+
+<div *ngIf="user.roles == 'ADMIN'">
+  <div class="center">
+      <h2 style="margin-left: auto; margin-right: auto;">Hello {{user.username}}</h2> 
+      <hr/>
+        <div  class="field">
+          <label><b>Username: </b></label> {{user.username}}
+        </div>
+       
+        <div  class="field">
+          <label><b>Role: </b></label> {{user.roles}}
+        </div>
+        <div class="buttons">
+          <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
+          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+        </div>
+      <br>
+  </div>
+</div>
+
+
+<div *ngIf="user.roles == 'LECTURER'">
+  <div class="center">
+      <h2 style="margin-left: auto; margin-right: auto;">Hello {{user.username}}</h2> 
+      <hr/>
+        <div  class="field">
+          <label><b>Username: </b></label> {{user.username}}
+        </div>
+       
+        <div  class="field">
+          <label><b>Role: </b></label> {{user.roles}}
+        </div>
+        <div class="buttons">
+          <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
+          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+        </div>
+
+      <br>
+  </div>
+</div>
+
+
 

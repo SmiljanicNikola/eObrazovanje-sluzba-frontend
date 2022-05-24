@@ -42,4 +42,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['bankAccountDetails', id]);
   }
 
+  changePassword(id:number){
+    console.log(id);
+    this.router.navigate(['changePassword', id]);
+
+  }
+
 }
