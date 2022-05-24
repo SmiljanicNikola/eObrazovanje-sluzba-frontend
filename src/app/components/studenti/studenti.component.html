@@ -19,7 +19,8 @@
       <td>{{ s.adress }}</td>
       <td>{{ s.indexNumber }}</td>
       <td>  
-        <button style="margin-left: 5px;" class="btn btn-danger" (click)="deleteStud(s.student_id)">Block</button>
+        <button *ngIf="!s.blocked" style="margin-left: 5px;" class="btn btn-danger" (click)="deleteStud(s.student_id)">Block</button>
+        <p *ngIf="s.blocked">This student is blocked</p>
         <button style="margin-left: 5px;" class="btn btn-info" (click)="updateStud(s.student_id)">Update</button>
         <button style="margin-left: 5px;" class="btn btn-primary" (click)="studentDetails(s.student_id)">View</button>
       </td>
