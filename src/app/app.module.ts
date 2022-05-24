@@ -28,6 +28,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
+import { DepartmentComponent } from './components/departments/departments.component';
+import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
+import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
 
 
 
@@ -52,6 +55,9 @@ import { UpdateExamComponent } from './components/update-exam/update-exam.compon
     FooterComponent,
     HomeComponent,
     LecturersExamsComponent,
+    DepartmentComponent,
+    UpdateDepartmentsComponent,
+    CreateDepartmentsComponent,
     UpdateExamComponent
   ],
   imports: [

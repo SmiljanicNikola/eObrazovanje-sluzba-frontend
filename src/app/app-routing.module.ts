@@ -15,6 +15,9 @@ import { ExamDatesComponent } from './components/exam-dates/exam-dates.component
 import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
+import { DepartmentComponent } from './components/departments/departments.component';
+import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
+import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -31,7 +34,10 @@ const routes: Routes = [
   { path: 'examDates', component: ExamDatesComponent },
   {path: 'home', component: HomeComponent},
   {path: 'lecturersTakenExam', component:LecturersExamsComponent},
-  {path: 'updateExam/:id', component: UpdateExamComponent}
+  {path: 'updateExam/:id', component: UpdateExamComponent},
+  {path: 'departments', component: DepartmentComponent},
+  {path: 'updateDepartment/:id', component: UpdateDepartmentsComponent},
+  {path: 'createDepartment', component: CreateDepartmentsComponent}
 
 
 ];
