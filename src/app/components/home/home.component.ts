@@ -48,4 +48,10 @@ export class HomeComponent implements OnInit {
 
   }
 
+  changeProfile(id:number){
+    console.log(id);
+    this.router.navigate(['updateProfile', id]);
+
+  }
+
 }

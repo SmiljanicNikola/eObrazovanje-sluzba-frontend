@@ -29,6 +29,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 
 
 
@@ -54,7 +55,8 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     HomeComponent,
     LecturersExamsComponent,
     UpdateExamComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
