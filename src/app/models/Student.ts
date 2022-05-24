@@ -6,6 +6,7 @@ export class Student {
     firstname: string;
     lastname: string;
     indexNumber: string;
+    jmbg: string;
     adress: string;
     blocked:boolean;
     accountId:number;

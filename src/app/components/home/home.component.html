@@ -1,17 +1,39 @@
-<div class="center">
-    <h2 style="margin-left: auto; margin-right: auto;">Hello {{user.username}}</h2> 
-    <hr/>
-      <div class="field">
-        <label><b>FirstName: </b></label> {{user.name}}
-      </div>
-      <div  class="field">
-        <label><b>Surname: </b></label> {{user.surname}}
-      </div>
-      <div  class="field">
-        <label><b>Name: </b></label> {{user.username}}
-      </div>
-      <div  class="field">
-        <label><b>Role: </b></label> {{user.roles}}
-      </div>
-    <br>
+<div *ngIf="user.roles == 'STUDENT'">
+
+  <div class="center">
+      <h2 style="margin-left: auto; margin-right: auto;">Hello {{user.username}}</h2> 
+      <hr/>
+        <div class="field">
+          <label><b>Firstname: </b></label> {{student.firstname}}
+        </div>
+        <div  class="field">
+          <label><b>Lastname: </b></label> {{student.lastname}}
+        </div>
+        <div  class="field">
+          <label><b>Username: </b></label> {{user.username}}
+        </div>
+        <div  class="field">
+          <label><b>Index Number: </b></label> {{student.indexNumber}}
+        </div>
+        <div  class="field">
+          <label><b>Jmbg: </b></label> {{student.jmbg}}
+        </div>
+        <div  class="field">
+          <label><b>Adress: </b></label> {{student.adress}}
+        </div>
+        <div  class="field">
+          <label><b>Role: </b></label> {{user.roles}}
+        </div>
+        <div class="buttons">
+
+          <button style="margin-left: 10px;" (click)="checkBank(student.student_id)"class="btn btn-info">Check Bank Account</button><br>
+          <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
+          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+        </div>
+
+      <br>
+  </div>
+  <app-passed-exams></app-passed-exams>
+
 </div>
+
