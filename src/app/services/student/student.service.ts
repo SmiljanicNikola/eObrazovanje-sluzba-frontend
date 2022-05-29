@@ -6,13 +6,6 @@ import { AuthService } from '../auth/auth.service';
 import {environment} from '../../../environments/environment'
 import { Student } from 'src/app/models/Student';
 
-const uploadHeader = {
-  headers: new HttpHeaders({
-    'method':'PUT',
-    'Content-Type': 'application/json',
-  }),
-};
-
 const createHeader = {
   headers: new HttpHeaders({
     'method':'POST',
