@@ -4,6 +4,6 @@ export class ExamDate {
     id: number;
     date: Date;
     name: string;
-    takingExam: TakingExam;
+    //takingExam: TakingExam;
     deleted: boolean;
 }

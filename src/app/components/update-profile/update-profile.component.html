@@ -2,15 +2,15 @@
     <h3>Update Profile</h3>
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="name">FirstName</label>
+                <label>Name</label>
                 <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
             </div>
             <div class="form-group">
-                <label for="name">LastName</label>
+                <label for="surname">Surname</label>
                 <input type="text" class="form-control" id="surname" required [(ngModel)]="user.surname" name="surname">
             </div>
             <div class="form-group">
-                <label for="name">Username</label>
+                <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username">
             </div>
             <div class="form-group">
@@ -23,7 +23,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" (click)="updateUser(user.user_id, user)" class="btn btn-success">Submit</button>
         </form> 
 
 </div>

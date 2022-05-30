@@ -21,10 +21,11 @@ import { CreateStudentsComponent } from './components/create-students/create-stu
 import { CreateAdminComponent } from './components/create-admin/create-admin.component';
 import { CreateLecturerComponent } from './components/create-lecturer/create-lecturer.component';
 import { UpdateLecturerComponent } from './components/update-lecturer/update-lecturer.component';
-import { AdminComponent } from './components/admin/admin.component;
+import { AdminComponent } from './components/admin/admin.component';
 import { DepartmentComponent } from './components/departments/departments.component';
 import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
 import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
+import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -52,10 +53,8 @@ const routes: Routes = [
   {path: 'updateDepartment/:id', component: UpdateDepartmentsComponent},
   {path: 'createDepartment', component: CreateDepartmentsComponent},
   {path: 'changePassword/:id', component: ChangePasswordComponent},
-  {path: 'updateProfile/:id', component: UpdateProfileComponent}
-
-
-
+  {path: 'updateProfile/:id', component: UpdateProfileComponent},
+  {path: 'addExamDate', component: CreateExamDateComponent}
 ];
 
 @NgModule({

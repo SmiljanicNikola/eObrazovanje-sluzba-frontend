@@ -40,6 +40,7 @@ import { UpdateLecturerComponent } from './components/update-lecturer/update-lec
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { DocumentsComponent } from './components/documents/documents.component';
+import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
 
 
 
@@ -71,13 +72,14 @@ import { DocumentsComponent } from './components/documents/documents.component';
     UpdateExamComponent,
     ChangePasswordComponent,
     UpdateProfileComponent,
-    CreateStudentsComponent,=
+    CreateStudentsComponent,
     CreateAdminComponent,
     CreateLecturerComponent,
     UpdateLecturerComponent,
     StudentSubjectComponent,
     SubjectPerformanceComponent,
     DocumentsComponent,
+    CreateExamDateComponent,
   ],
   imports: [
     BrowserModule,

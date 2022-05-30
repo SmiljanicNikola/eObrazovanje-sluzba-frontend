@@ -2,13 +2,16 @@
     <tr>
         <th>Date</th>
         <th>ExamDate name</th>
-        <th>Subject</th>
+        <th>Actions</th>
       </tr>
       <tr *ngFor="let ed of examDates">
         <td>{{ ed.date }}</td>
         <td>{{ ed.name }}</td>
-        <td>  
-          <button style="margin-left: 5px;" class="btn btn-danger">Remove</button>
-        </td>
+        <div *ngIf="user.roles == 'ADMIN'">
+          <td>
+            <button style="margin-left: 5px;" (click)="deleteExamDate(ed.id)" class="btn btn-danger">Remove</button>
+            <button style="margin-left: 5px;" (click)="addExamDate()" class="btn btn-success">Add New</button>
+          </td>
+        </div>
       
       </tr>

@@ -4,7 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 import {environment} from '../../../environments/environment'
-import { Student } from 'src/app/models/Student';
+import { Student, StudentForUpdateProfile } from 'src/app/models/Student';
 
 const createHeader = {
   headers: new HttpHeaders({
@@ -53,9 +53,15 @@ export class StudentService {
   createStudent(student: Student) : Observable<Student>{
     return this.http.post<Student>(this.apiStudentsUrl, student, createHeader);
   }
+
   updateStudent(id:number, student:Student) : Observable<Student>{
     return this.http.put<Student>(`${this.apiStudentsUrl}/${id}`,JSON.stringify(student), headers2)
   }
+
+  updateStudent2(id:number, student:StudentForUpdateProfile) : Observable<StudentForUpdateProfile>{
+    return this.http.put<StudentForUpdateProfile>(`${this.apiStudentsUrl}/${id}`,JSON.stringify(student), headers2)
+  } /*This method is only for updating student's profile, its not used anywhere else because student should not be able 
+  to update his studentHistory and account attribute, also he cant block and unblock himself*/
 
   
 }
