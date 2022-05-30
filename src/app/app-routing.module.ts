@@ -18,21 +18,30 @@ import { UpdateExamComponent } from './components/update-exam/update-exam.compon
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { CreateStudentsComponent } from './components/create-students/create-students.component';
+import { CreateAdminComponent } from './components/create-admin/create-admin.component';
+import { CreateLecturerComponent } from './components/create-lecturer/create-lecturer.component';
+import { UpdateLecturerComponent } from './components/update-lecturer/update-lecturer.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
-  { path: '',pathMatch:'full', redirectTo:'login'},
-  { path: 'login', component: LoginComponent },
-  { path: 'studenti', component: StudentiComponent },
-  { path: 'addStudent', component: CreateStudentsComponent},
-  { path: 'lecturers', component: LecturersComponent },
-  { path : 'subjects', component: SubjectsComponent },
-  { path: 'semesters', component: SemesterComponent },
+  {path: '',pathMatch:'full', redirectTo:'login'},
+  {path: 'login', component: LoginComponent },
+  {path: 'studenti', component: StudentiComponent },
+  {path: 'updateStudent', component: UpdateStudentComponent},
+  {path: 'admins', component: AdminComponent},
+  {path: 'addAdmin', component: CreateAdminComponent},
+  {path: 'addStudent', component: CreateStudentsComponent},
+  {path: 'lecturers', component: LecturersComponent},
+  {path: 'addLecturer', component: CreateLecturerComponent},
+  {path: 'updateLecturer', component: UpdateLecturerComponent},
+  {path: 'subjects', component: SubjectsComponent},
+  {path: 'semesters', component: SemesterComponent},
   {path: 'payments', component: PaymentsComponent},
   {path: 'studentDetails/:id', component: StudentDetailsComponent},
   {path: 'updateStudent/:id', component: UpdateStudentComponent},
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
   {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
-  { path: 'examDates', component: ExamDatesComponent },
+  {path: 'examDates', component: ExamDatesComponent},
   {path: 'home', component: HomeComponent},
   {path: 'lecturersTakenExam', component:LecturersExamsComponent},
   {path: 'updateExam/:id', component: UpdateExamComponent},

@@ -31,6 +31,11 @@ import { UpdateExamComponent } from './components/update-exam/update-exam.compon
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { CreateStudentsComponent } from './components/create-students/create-students.component';
+import { CreateAdminComponent } from './components/create-admin/create-admin.component';
+import { CreateLecturerComponent } from './components/create-lecturer/create-lecturer.component';
+import { UpdateLecturerComponent } from './components/update-lecturer/update-lecturer.component';
+import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
+import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 
 
 
@@ -58,7 +63,12 @@ import { CreateStudentsComponent } from './components/create-students/create-stu
     UpdateExamComponent,
     ChangePasswordComponent,
     UpdateProfileComponent,
-    CreateStudentsComponent
+    CreateStudentsComponent,
+    CreateAdminComponent,
+    CreateLecturerComponent,
+    UpdateLecturerComponent,
+    StudentSubjectComponent,
+    SubjectPerformanceComponent
   ],
   imports: [
     BrowserModule,

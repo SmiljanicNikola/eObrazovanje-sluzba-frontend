@@ -1,0 +1,31 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Add Admin</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.username" id="username" required name="username">
+            </div>
+            <div class="form-group">
+                <label for="name">Firstname</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.firstname" id="firstname" required name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="name">Lastname</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.lastname" id="lastname" required name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="name">Password</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.password" id="password" type= 'password' required name="password">
+            </div>
+            <div class="form-group">
+                <label for="name">JMBG</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.jmbg" id="jmbg" required name="jmbg">
+            </div>
+            <div class="form-group">
+                <label for="name">Adress</label>
+                <input type="text" class="form-control" [(ngModel)]="admin.adress" id="adress" required name="adress">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+</div>
+

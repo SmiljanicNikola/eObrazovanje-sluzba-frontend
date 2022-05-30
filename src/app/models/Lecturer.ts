@@ -1,12 +1,11 @@
 export class Lecturer{
-  lecturer_Id:number;
-  name:string;
-  surname:string;
-  username:string;
-  password:string;
-  address:string;
-  jmbg:string;
+  id:number;
+  username: string;
+  password: string;
+  name: string;
+  surname: string;
+  jmbg: string;
+  address: string;
   pay:number;
   blocked:boolean;
-
 }

@@ -1,8 +1,23 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from 'src/app/models/Admin';
 import { environment } from 'src/environments/environment';
+
+const uploadHeader = {
+  headers: new HttpHeaders({
+    'method':'PUT',
+    'Content-Type': 'application/json',
+  }),
+};
+
+const createHeader = {
+  headers: new HttpHeaders({
+    'method':'POST',
+    'Content-Type': 'application/json',
+  }),
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +27,9 @@ export class AdminService {
   private apiAdminsUrl = `${environment.apiURL}/api/admins`;
 
   constructor(private http: HttpClient) { }
-
+  getAdmins(): Observable<Admin[]>{
+    return this.http.get<Admin[]>(this.apiAdminsUrl);
+  }
 
   getAdmin(): Observable<Admin[]>{
     return this.http.get<Admin[]>(this.apiAdminsUrl);
@@ -25,5 +42,9 @@ export class AdminService {
   getAdminById(id:number): Observable<any>{
     return this.http.get(`${this.apiAdminsUrl}/${id}`);
     
+  }
+
+  createAdmin(admin: Admin) : Observable<Admin>{
+    return this.http.post<Admin>(this.apiAdminsUrl, admin, createHeader);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'src/app/models/Subject';
 import { SubjectService } from 'src/app/services/subjects/subject.service';
 
@@ -10,7 +11,7 @@ import { SubjectService } from 'src/app/services/subjects/subject.service';
 export class SubjectsComponent implements OnInit {
   subjects: Subject[] = [];
 
-  constructor(private subjectService:SubjectService) { }
+  constructor(private subjectService: SubjectService, private router: Router) { }
 
   ngOnInit(): void {
     this.subjectService.getSubjcts().subscribe((subjects) => this.subjects = subjects)
