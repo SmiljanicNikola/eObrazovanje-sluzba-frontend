@@ -13,6 +13,13 @@ const createHeader = {
   }),
 };
 
+const headers2 = {
+  headers: new HttpHeaders({
+    'method':'PUT',
+    'Content-Type': 'application/json',
+  }),
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +52,9 @@ export class StudentService {
 
   createStudent(student: Student) : Observable<Student>{
     return this.http.post<Student>(this.apiStudentsUrl, student, createHeader);
+  }
+  updateStudent(id:number, student:Student) : Observable<Student>{
+    return this.http.put<Student>(`${this.apiStudentsUrl}/${id}`,JSON.stringify(student), headers2)
   }
 
   

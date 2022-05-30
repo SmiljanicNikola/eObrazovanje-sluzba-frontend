@@ -3,6 +3,15 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/User';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+
+const headers2 = {
+  headers: new HttpHeaders({
+    'method':'PUT',
+    'Content-Type': 'application/json',
+  }),
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +33,10 @@ export class UserService {
   getUserByUsername(username: string): Observable<any>{
     return this.http.get(`${this.apiUsersUrl}/username/${username}`);
   }
+
+  updateUser(id:number, user:User) : Observable<User>{
+    return this.http.put<User>(`${this.apiUsersUrl}/${id}`,JSON.stringify(user), headers2);
+  }
+
 
 }
