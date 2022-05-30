@@ -20,9 +20,6 @@ export class SubjectPerformanceComponent implements OnInit {
   }
 
   public choseSubject(id:number){
-    let response = this.subjectPerformanceService.getSubjectPerformanceById(id);
-    response.subscribe((subjectPerformance)=> this.subjectPerformance = subjectPerformance)
-    console.log(this.subjectPerformance);
     this.router.navigate(['choseStudent', id]);
   }
 

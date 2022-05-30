@@ -24,7 +24,7 @@ const createHeader = {
 })
 export class AttendingCousreService {
 
-  private attendingUrl = `${environment.apiURL}/api/admins`;
+  private attendingUrl = `${environment.apiURL}/api/attendingCourses`;
 
   constructor(private http: HttpClient) { }
 
