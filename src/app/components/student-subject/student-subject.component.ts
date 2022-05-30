@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student/student.service';
-import { LecturerService } from 'src/app/services/lecturers/lecturer.service';
 import { AttendingCourse } from 'src/app/models/AttendingCourse';
 import { SubjectPerformance } from 'src/app/models/SubjectPerformance';
 import { Student } from 'src/app/models/Student';
@@ -15,29 +14,40 @@ import { AttendingCousreService } from 'src/app/services/attendingCourse/attendi
 })
 export class StudentSubjectComponent implements OnInit {
   students:Student[] = [];
+  studentsCopy:Student[] = [];
   student: any;
   attendingCourses: AttendingCourse[] = [];
   attendingCourse: any;
   subjectPerformance: SubjectPerformance[] = [];
   lecturer: any;
+  subjectPerformanceId: number;
 
-  constructor(private studentService: StudentService,private attendingCourseService: AttendingCousreService, private subjectPerformanceService: SubjectPerformanceService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private studentService: StudentService,private attendingCourseService: AttendingCousreService, private subjectPerformanceService: SubjectPerformanceService, private router: Router) { }
 
 
   ngOnInit(): void {
-    this.studentService.getStudents().subscribe((student) => this.students = student);
+    this.subjectPerformanceId = this.route.snapshot.params['id'];
+
+    this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
+
+    this.studentService.getStudents().subscribe((student) => { 
+    this.studentsCopy = student;
+    this.students = student;
+    });
+    
   }
   
-  createAttendingCourse(){
-    this.attendingCourseService.createAttendingCourse(this.attendingCourse).subscribe(data=>{
+  createAttendingCourse(id:number){
+      this.attendingCourse.student = id;
+      this.attendingCourseService.createAttendingCourse(this.attendingCourse).subscribe(data=>{
       console.log(data);
-      this.attendingCourse = new AttendingCourse();
+      this.studentsCopy = this.students.filter(s => s.student_id != id);
+      this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
       console.log(this.attendingCourse);
     },
     error=>console.log(error));
   }
-  onSubmit(){
-    this.createAttendingCourse();
-  }
+
+
 }
 

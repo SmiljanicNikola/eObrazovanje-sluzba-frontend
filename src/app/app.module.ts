@@ -71,7 +71,7 @@ import { DocumentsComponent } from './components/documents/documents.component';
     UpdateExamComponent,
     ChangePasswordComponent,
     UpdateProfileComponent,
-    CreateStudentsComponent,=
+    CreateStudentsComponent,
     CreateAdminComponent,
     CreateLecturerComponent,
     UpdateLecturerComponent,

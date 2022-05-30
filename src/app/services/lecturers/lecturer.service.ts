@@ -48,12 +48,6 @@ export class LecturerService {
   createLecturer(lecturer:Lecturer) : Observable<Lecturer>{
     return this.http.post<Lecturer>(this.apiLecturerUrl, lecturer, createHeader)
   }
-
-  /*updateLecturer(id:number,lecturers: Lecturer) : Observable<Lecturer>{
-    return this.http.put<Lecturer>(`${this.apiLecturerUrl}/${id}`, JSON.stringify(lecturers),uploadHeader);
-
-  }*/
-
   updateLecturer(lecturer: any): Observable<Lecturer>{
     return this.http.put<Lecturer>(`${this.apiLecturerUrl}/${lecturer.id}`,lecturer)
   }
