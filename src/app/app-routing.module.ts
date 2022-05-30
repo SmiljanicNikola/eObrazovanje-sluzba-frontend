@@ -18,6 +18,9 @@ import { UpdateExamComponent } from './components/update-exam/update-exam.compon
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { CreateStudentsComponent } from './components/create-students/create-students.component';
+import { DepartmentComponent } from './components/departments/departments.component';
+import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
+import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
 
 const routes: Routes = [
   { path: '',pathMatch:'full', redirectTo:'login'},
@@ -36,6 +39,9 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'lecturersTakenExam', component:LecturersExamsComponent},
   {path: 'updateExam/:id', component: UpdateExamComponent},
+  {path: 'departments', component: DepartmentComponent},
+  {path: 'updateDepartment/:id', component: UpdateDepartmentsComponent},
+  {path: 'createDepartment', component: CreateDepartmentsComponent},
   {path: 'changePassword/:id', component: ChangePasswordComponent},
   {path: 'updateProfile/:id', component: UpdateProfileComponent}
 

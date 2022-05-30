@@ -1,0 +1,27 @@
+#departments-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  #departments-table td,#departments-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #departments-table tr:nth-child(even) td{
+    background: #f2f2f2;
+  }
+  
+  #departments-table tr:hover td{
+    background: #ddd;
+  }
+  
+  #departments-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00a8ba;
+    color: white;
+  }

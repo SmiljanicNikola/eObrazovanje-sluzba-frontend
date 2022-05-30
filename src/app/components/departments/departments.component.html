@@ -1,0 +1,20 @@
+<table id="departments-table">
+    <tr>
+      <th>Department Name</th>
+      <th>Number of Students</th>
+      <th>Deactivated</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let d of departments">
+      <td>{{ d.name }}</td>
+      <td>{{ d.numberOfStudents }}</td>
+      <td>{{ d.blocked }}</td>
+      <td>  
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="updateDepartment(d.id)">Update</button>
+        <button style="margin-left: 5px;" class="btn btn-danger" (click)="blockDepartment(d.id)">Block</button>
+      </td>
+    </tr>
+  </table>
+  <div style="margin: 10px auto; width: 1%">
+  <button class="btn btn-primary" (click)="createDepartment()">Add</button>
+  </div>
