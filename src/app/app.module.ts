@@ -28,6 +28,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { LecturersExamsComponent } from './components/lecturers-exams/lecturers-exams.component';
 import { UpdateExamComponent } from './components/update-exam/update-exam.component';
+import { DepartmentComponent } from './components/departments/departments.component';
+import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
+import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { CreateStudentsComponent } from './components/create-students/create-students.component';
@@ -36,6 +39,7 @@ import { CreateLecturerComponent } from './components/create-lecturer/create-lec
 import { UpdateLecturerComponent } from './components/update-lecturer/update-lecturer.component';
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
+import { DocumentsComponent } from './components/documents/documents.component';
 
 
 
@@ -60,15 +64,20 @@ import { SubjectPerformanceComponent } from './components/subject-performance/su
     FooterComponent,
     HomeComponent,
     LecturersExamsComponent,
+    DepartmentComponent,
+    UpdateDepartmentsComponent,
+    CreateDepartmentsComponent,
+    UpdateExamComponent,
     UpdateExamComponent,
     ChangePasswordComponent,
     UpdateProfileComponent,
-    CreateStudentsComponent,
+    CreateStudentsComponent,=
     CreateAdminComponent,
     CreateLecturerComponent,
     UpdateLecturerComponent,
     StudentSubjectComponent,
-    SubjectPerformanceComponent
+    SubjectPerformanceComponent,
+    DocumentsComponent,
   ],
   imports: [
     BrowserModule,

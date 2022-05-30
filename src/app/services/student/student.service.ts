@@ -6,16 +6,16 @@ import { AuthService } from '../auth/auth.service';
 import {environment} from '../../../environments/environment'
 import { Student } from 'src/app/models/Student';
 
-const uploadHeader = {
+const createHeader = {
   headers: new HttpHeaders({
-    'method':'PUT',
+    'method':'POST',
     'Content-Type': 'application/json',
   }),
 };
 
-const createHeader = {
+const headers2 = {
   headers: new HttpHeaders({
-    'method':'POST',
+    'method':'PUT',
     'Content-Type': 'application/json',
   }),
 };
@@ -52,6 +52,9 @@ export class StudentService {
 
   createStudent(student: Student) : Observable<Student>{
     return this.http.post<Student>(this.apiStudentsUrl, student, createHeader);
+  }
+  updateStudent(id:number, student:Student) : Observable<Student>{
+    return this.http.put<Student>(`${this.apiStudentsUrl}/${id}`,JSON.stringify(student), headers2)
   }
 
   

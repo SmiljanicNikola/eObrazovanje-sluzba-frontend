@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Username</label>
-                <input type="text" class="form-control" id="username" required [(ngModel)]="student.lastname" name="lastname">
+                <input type="text" class="form-control" id="username" required [(ngModel)]="student.username" name="username">
             </div>
             <div class="form-group">
                 <label for="name">Adress</label>
@@ -23,7 +23,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" (click)="updateStudent(student.student_id, student)" class="btn btn-success">Submit</button>
         </form> 
 
 </div>
