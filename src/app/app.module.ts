@@ -34,6 +34,11 @@ import { CreateDepartmentsComponent } from './components/create-departments/crea
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { CreateStudentsComponent } from './components/create-students/create-students.component';
+import { CreateAdminComponent } from './components/create-admin/create-admin.component';
+import { CreateLecturerComponent } from './components/create-lecturer/create-lecturer.component';
+import { UpdateLecturerComponent } from './components/update-lecturer/update-lecturer.component';
+import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
+import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 
 
@@ -66,7 +71,12 @@ import { DocumentsComponent } from './components/documents/documents.component';
     UpdateExamComponent,
     ChangePasswordComponent,
     UpdateProfileComponent,
-    CreateStudentsComponent,
+    CreateStudentsComponent,=
+    CreateAdminComponent,
+    CreateLecturerComponent,
+    UpdateLecturerComponent,
+    StudentSubjectComponent,
+    SubjectPerformanceComponent,
     DocumentsComponent,
   ],
   imports: [

@@ -1,0 +1,24 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Update lecturer Profile)</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">FirstName</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="lecturer.name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="name">LastName</label>
+                <input type="text" class="form-control" id="lastname" required [(ngModel)]="lecturer.surname" name="surname">
+            </div>
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" id="username" required [(ngModel)]="lecturer.username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="name">Adress</label>
+                <input type="text" class="form-control" id="adress" required [(ngModel)]="lecturer.address" name="address">
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+
+</div>

@@ -8,8 +8,9 @@
     </tr>
     <tr *ngFor="let a of admins">
       <td> {{ a.admin_id }} </td>
-      <td>{{ a.username }}</td>
+      <td>{{ a.firstname }}</td>
       <td>{{ a.address }}</td>
+      <td>{{a.lastname}}</td>
       <td>  
         <button style="margin-left: 500px;" class="btn btn-info" (click)="updateAdmin(a.admin_id)">Update</button>
       </td>  

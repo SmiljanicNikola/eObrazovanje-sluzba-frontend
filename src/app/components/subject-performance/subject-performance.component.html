@@ -1,0 +1,13 @@
+<table id="students-table">
+    <tr>
+      <th>Subject Name</th>
+      <th>School year</th>
+    </tr>
+    <tr *ngFor="let s of subjectPerformance">
+      <td> {{ s.subject }} </td>
+      <td>{{ s.school_year }}</td>
+      <td>
+        <button style="margin-left: 5px;" class="btn btn-primary" (click)="choseSubject(s.subject_perforamnce_id)">View</button>
+      </td>     
+    </tr>
+  </table>

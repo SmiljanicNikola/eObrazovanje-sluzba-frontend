@@ -1,5 +1,6 @@
 <table id="lecturers-table">
   <tr>
+    <th>Id</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Username</th>
@@ -10,6 +11,7 @@
     <th>Actions</th>
   </tr>
   <tr *ngFor="let l of lecturers">
+    <td>{{ l.id }}</td>
     <td>{{ l.name }}</td>
     <td>{{ l.surname }}</td>
     <td>{{ l.username }}</td>
@@ -18,8 +20,10 @@
     <td>{{ l.pay }}</td>
     <td>{{ l.blocked }}</td>
     <td>  
-      <button style="margin-left: 5px;" class="btn btn-danger">Block</button>
-      <button style="margin-left: 5px;" class="btn btn-info">Update</button>
+      <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-danger" (click)="deleteLecturer(l.id)">Block</button>
+      <p *ngIf="l.blocked">This lecturer is blocked</p>
+      <button style="margin-left: 5px;" class="btn btn-danger" [routerLink]="['/updateLecturer',l.id]">Update1</button>
+      <button style="margin-left: 5px;" class="btn btn-info" (click)="updateLecturer(l.id)">Update</button>
       <button style="margin-left: 5px;" class="btn btn-primary">View Schedule</button>
     </td>
   </tr>

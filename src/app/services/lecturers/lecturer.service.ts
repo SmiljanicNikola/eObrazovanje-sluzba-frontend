@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Lecturer } from 'src/app/models/Lecturer';
 import {environment} from '../../../environments/environment'
-import { Student } from 'src/app/models/Student';
 
 const createHeader = {
   headers: new HttpHeaders({
@@ -26,6 +25,7 @@ const uploadHeader = {
 export class LecturerService {
 
   private apiLecturerUrl = `${environment.apiURL}/api/lecturers`;
+  addLecturer: any;
 
   constructor(private http: HttpClient) { }
 
@@ -38,19 +38,23 @@ export class LecturerService {
   }
 
   getLecturerById(id: number): Observable<any>{
-    return this.http.get(`${this.apiLecturerUrl}/id/${id}`);
+    return this.http.get(`${this.apiLecturerUrl}/${id}`);
   }
 
   deleteLecturer(id: any): Observable<any>{
     return this.http.delete(`${this.apiLecturerUrl}/${id}`);
   }
 
-  addLecturer(lecturer:Lecturer) : Observable<Lecturer>{
+  createLecturer(lecturer:Lecturer) : Observable<Lecturer>{
     return this.http.post<Lecturer>(this.apiLecturerUrl, lecturer, createHeader)
   }
 
-  updateLecturer(id:number,lecturers: Lecturer) : Observable<Lecturer>{
+  /*updateLecturer(id:number,lecturers: Lecturer) : Observable<Lecturer>{
     return this.http.put<Lecturer>(`${this.apiLecturerUrl}/${id}`, JSON.stringify(lecturers),uploadHeader);
 
+  }*/
+
+  updateLecturer(lecturer: any): Observable<Lecturer>{
+    return this.http.put<Lecturer>(`${this.apiLecturerUrl}/${lecturer.id}`,lecturer)
   }
 }

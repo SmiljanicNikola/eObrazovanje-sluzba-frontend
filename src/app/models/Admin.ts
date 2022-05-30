@@ -1,9 +1,10 @@
 export class Admin {
-    admin_id: number;
-    username: string;
-    name: string;
-    surname: string;
-    address: string;
-    jmbg: string;
-    blocked:boolean;
-  }
+  admin_id: number;
+  username: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  jmbg: string;
+  adress: string;
+  blocked:boolean;
+}
