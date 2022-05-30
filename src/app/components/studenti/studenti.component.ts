@@ -25,9 +25,6 @@ export class StudentiComponent implements OnInit {
   }
 
   public deleteStud(id:number){
-    /*console.log(id);
-    this.studentService.deleteStudent(id);
-    console.log(this.studentService.getStudentById(id));*/
     let response = this.studentService.deleteStudent(id);
     response.subscribe((students)=> this.student = students);
   }
@@ -41,9 +38,5 @@ export class StudentiComponent implements OnInit {
     response.subscribe((student)=> this.student = student)
     console.log(this.student);
     this.router.navigate(['studentDetails', id]);
-  }
-
-  public addStud(){
-    
   }
 }

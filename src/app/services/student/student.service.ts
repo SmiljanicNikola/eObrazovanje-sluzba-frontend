@@ -1,8 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Student } from 'src/app/models/Student';
+import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 import {environment} from '../../../environments/environment'
+import { Student } from 'src/app/models/Student';
+
+const createHeader = {
+  headers: new HttpHeaders({
+    'method':'POST',
+    'Content-Type': 'application/json',
+  }),
+};
+
+const headers2 = {
+  headers: new HttpHeaders({
+    'method':'PUT',
+    'Content-Type': 'application/json',
+  }),
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +50,13 @@ export class StudentService {
     return this.http.get(`${this.apiStudentsUrl}/username/${username}`);
   }
 
+  createStudent(student: Student) : Observable<Student>{
+    return this.http.post<Student>(this.apiStudentsUrl, student, createHeader);
+  }
+  updateStudent(id:number, student:Student) : Observable<Student>{
+    return this.http.put<Student>(`${this.apiStudentsUrl}/${id}`,JSON.stringify(student), headers2)
+  }
+
   
 }
+
