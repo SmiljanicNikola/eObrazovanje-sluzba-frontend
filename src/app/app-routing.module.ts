@@ -25,12 +25,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { DepartmentComponent } from './components/departments/departments.component';
 import { UpdateDepartmentsComponent } from './components/update-departments/update-departments.component';
 import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
-<<<<<<< HEAD
 import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
-=======
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
->>>>>>> 8ad49dbc60ace1c6b27af7901513e5b2a6e95d73
+
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
