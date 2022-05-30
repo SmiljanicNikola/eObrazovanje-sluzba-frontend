@@ -1,5 +1,5 @@
 export class Lecturer{
-  id:number;
+  lecturer_Id:number;
   username: string;
   password: string;
   name: string;
