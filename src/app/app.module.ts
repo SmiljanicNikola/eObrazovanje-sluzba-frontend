@@ -41,6 +41,7 @@ import { StudentSubjectComponent } from './components/student-subject/student-su
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { DocumentsComponent } from './components/documents/documents.component';
 import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
+import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
 
 
 
@@ -79,7 +80,8 @@ import { CreateExamDateComponent } from './components/create-exam-date/create-ex
     StudentSubjectComponent,
     SubjectPerformanceComponent,
     DocumentsComponent,
-    CreateExamDateComponent,
+    CreateSemestersComponent,
+    CreateExamDateComponent
   ],
   imports: [
     BrowserModule,

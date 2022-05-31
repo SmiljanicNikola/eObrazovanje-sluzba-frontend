@@ -48,7 +48,7 @@ export class DepartmentsService {
     return this.http.post<Departments>(this.apiDepartmentsUrl, departments, createHeader);
   }
 
-  blockDepartment(id:number) : Observable<Departments>{
+  blockDepartment(id:any) : Observable<any>{
     console.log("bravo + ", id);
     return this.http.delete<Departments>(`${this.apiDepartmentsUrl}/${id}`);
   }

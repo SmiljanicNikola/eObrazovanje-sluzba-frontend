@@ -28,6 +28,7 @@ import { CreateDepartmentsComponent } from './components/create-departments/crea
 import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
+import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
 
 
 const routes: Routes = [
@@ -59,7 +60,9 @@ const routes: Routes = [
   {path: 'createDepartment', component: CreateDepartmentsComponent},
   {path: 'changePassword/:id', component: ChangePasswordComponent},
   {path: 'updateProfile/:id', component: UpdateProfileComponent},
-  {path: 'addExamDate', component: CreateExamDateComponent}
+  {path: 'addExamDate', component: CreateExamDateComponent},
+  {path: 'createSemester', component: CreateSemestersComponent},
+  {path: 'updateSemester/:id', component: UpdateStudentComponent}
 ];
 
 @NgModule({

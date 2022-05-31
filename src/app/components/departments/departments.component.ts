@@ -28,7 +28,8 @@ export class DepartmentComponent implements OnInit {
 
   public blockDepartment(id:number) {
     console.log(id);
-    this.departmentService.blockDepartment(id);
+    let response = this.departmentService.blockDepartment(id);
+    response.subscribe((departments)=> this.departments = departments)
   }
 
 }
