@@ -29,12 +29,16 @@ import { CreateExamDateComponent } from './components/create-exam-date/create-ex
 import { SubjectPerformanceComponent } from './components/subject-performance/subject-performance.component';
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
 import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
-
+import { GuardService as AuthGuard } from './services/auth/guard.service';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
   {path: 'login', component: LoginComponent },
-  {path: 'studenti', component: StudentiComponent },
+  {path: 'studenti', component: StudentiComponent,
+         canActivate:[AuthGuard],
+         data: { 
+          expectedRole: 'STUDENT'
+        }},
   {path: 'updateStudent', component: UpdateStudentComponent},
   {path: 'subject-performance', component:SubjectPerformanceComponent},
   {path: 'choseStudent/:id', component:StudentSubjectComponent},

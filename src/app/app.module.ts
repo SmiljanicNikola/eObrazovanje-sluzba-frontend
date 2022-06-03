@@ -42,7 +42,7 @@ import { SubjectPerformanceComponent } from './components/subject-performance/su
 import { DocumentsComponent } from './components/documents/documents.component';
 import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
 import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
-
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -100,6 +100,8 @@ import { CreateSemestersComponent } from './components/create-semester/create-se
       useClass: JwtInterceptor,
       multi: true
     },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
