@@ -39,34 +39,160 @@ const routes: Routes = [
          data: { 
           expectedRole: 'STUDENT'
         }},
-  {path: 'updateStudent', component: UpdateStudentComponent},
-  {path: 'subject-performance', component:SubjectPerformanceComponent},
-  {path: 'choseStudent/:id', component:StudentSubjectComponent},
-  {path: 'admins', component: AdminComponent},
-  {path: 'addAdmin', component: CreateAdminComponent},
-  {path: 'addStudent', component: CreateStudentsComponent},
-  {path: 'lecturers', component: LecturersComponent},
-  {path: 'addLecturer', component: CreateLecturerComponent},
-  {path: 'updateLecturer/:id', component: UpdateLecturerComponent},
-  {path: 'subjects', component: SubjectsComponent},
-  {path: 'semesters', component: SemesterComponent},
-  {path: 'payments', component: PaymentsComponent},
-  {path: 'studentDetails/:id', component: StudentDetailsComponent},
-  {path: 'updateStudent/:id', component: UpdateStudentComponent},
-  {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent},
-  {path: 'paymentHistory/:id', component: PaymentHistoryComponent},
-  {path: 'examDates', component: ExamDatesComponent},
+  {path: 'updateStudent', component: UpdateStudentComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: 'STUDENT'
+        }
+  },
+  {path: 'subject-performance', component:SubjectPerformanceComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: 'STUDENT'
+        }
+  },
+  {path: 'choseStudent/:id', component:StudentSubjectComponent,
+    canActivate:[AuthGuard],
+    data: {
+    expectedRole: 'STUDENT'
+  }
+
+  },
+  {path: 'admins', component: AdminComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'addAdmin', component: CreateAdminComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'addStudent', component: CreateStudentsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'lecturers', component: LecturersComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'addLecturer', component: CreateLecturerComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'updateLecturer/:id', component: UpdateLecturerComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'subjects', component: SubjectsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'semesters', component: SemesterComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'payments', component: PaymentsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'studentDetails/:id', component: StudentDetailsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'updateStudent/:id', component: UpdateStudentComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'paymentHistory/:id', component: PaymentHistoryComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'examDates', component: ExamDatesComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'STUDENT'
+    }
+  },
   {path: 'home', component: HomeComponent},
-  {path: 'lecturersTakenExam', component:LecturersExamsComponent},
-  {path: 'updateExam/:id', component: UpdateExamComponent},
-  {path: 'departments', component: DepartmentComponent},
-  {path: 'updateDepartment/:id', component: UpdateDepartmentsComponent},
-  {path: 'createDepartment', component: CreateDepartmentsComponent},
+  {path: 'lecturersTakenExam', component:LecturersExamsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'updateExam/:id', component: UpdateExamComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'departments', component: DepartmentComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'updateDepartment/:id', component: UpdateDepartmentsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'createDepartment', component: CreateDepartmentsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
   {path: 'changePassword/:id', component: ChangePasswordComponent},
   {path: 'updateProfile/:id', component: UpdateProfileComponent},
-  {path: 'addExamDate', component: CreateExamDateComponent},
-  {path: 'createSemester', component: CreateSemestersComponent},
-  {path: 'updateSemester/:id', component: UpdateStudentComponent}
+  {path: 'addExamDate', component: CreateExamDateComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'createSemester', component: CreateSemestersComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'updateSemester/:id', component: UpdateStudentComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  }
 ];
 
 @NgModule({
