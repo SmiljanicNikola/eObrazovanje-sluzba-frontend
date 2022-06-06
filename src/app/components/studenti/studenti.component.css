@@ -1,3 +1,17 @@
+.containerr{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.uploads{
+  display: inline-flex;
+  margin: 10px 0;
+}
+
+.uploads p{
+  margin: auto 10px auto 0;
+}
+
 #students-table{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
