@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'studenti', component: StudentiComponent,
          canActivate:[AuthGuard],
          data: { 
-          expectedRole: 'STUDENT'
+          expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
         }},
   {path: 'updateStudent', component: UpdateStudentComponent,
         canActivate:[AuthGuard],
