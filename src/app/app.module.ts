@@ -43,6 +43,7 @@ import { DocumentsComponent } from './components/documents/documents.component';
 import { CreateExamDateComponent } from './components/create-exam-date/create-exam-date.component';
 import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { ErrorPageComponent } from './components/404/404.component';
 
 
@@ -83,6 +84,7 @@ import { ErrorPageComponent } from './components/404/404.component';
     DocumentsComponent,
     CreateSemestersComponent,
     CreateExamDateComponent,
+    UpdatePreExamObligatinComponent,
     ErrorPageComponent
   ],
   imports: [

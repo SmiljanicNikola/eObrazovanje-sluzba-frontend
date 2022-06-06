@@ -47,4 +47,10 @@ getAttendingCourseById(id:number):Observable<any>{
   return this.http.get(`${this.attendingUrl}/${id}`);
 
 }
+
+getStudentByCourseId(id:number):Observable<any>{
+  return this.http.get(`${this.attendingUrl}/students/${id}`);
+
+}
+
 }

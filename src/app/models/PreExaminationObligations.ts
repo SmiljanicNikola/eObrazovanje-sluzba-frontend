@@ -7,7 +7,7 @@ export class PreExaminationObligations {
     pre_examination_obligation_id: number;
     subject: Subject;
     mandatory: boolean;
-    points: DoubleRange;
+    points: number;
     examDate: ExamDate;
     subjectPerformance: SubjectPerformance;
     typeOfRequirement: TypeOfRequirement;

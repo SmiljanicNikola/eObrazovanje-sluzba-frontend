@@ -22,7 +22,7 @@ export class StudentSubjectComponent implements OnInit {
   lecturer: any;
   subjectPerformanceId: number;
 
-  constructor(private route: ActivatedRoute, private studentService: StudentService,private attendingCourseService: AttendingCousreService, private subjectPerformanceService: SubjectPerformanceService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private studentService: StudentService,private attendingCourseService: AttendingCousreService) { }
 
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class StudentSubjectComponent implements OnInit {
 
     this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
 
-    this.studentService.getStudents().subscribe((student) => { 
+    this.attendingCourseService.getStudentByCourseId(this.subjectPerformanceId).subscribe((student) => { 
     this.studentsCopy = student;
     this.students = student;
     });
@@ -41,12 +41,18 @@ export class StudentSubjectComponent implements OnInit {
       this.attendingCourse.student = id;
       this.attendingCourseService.createAttendingCourse(this.attendingCourse).subscribe(data=>{
       console.log(data);
-      this.studentsCopy = this.students.filter(s => s.student_id != id);
+      let student = this.studentsCopy.find(s => s.student_id == id);
+      if(student){
+        let index = this.studentsCopy.indexOf(student);
+        this.studentsCopy.splice(index,1);
+      }
       this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
       console.log(this.attendingCourse);
     },
     error=>console.log(error));
   }
+
+
 
 
 }
