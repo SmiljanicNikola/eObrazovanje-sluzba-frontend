@@ -30,6 +30,8 @@ import { SubjectPerformanceComponent } from './components/subject-performance/su
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
 import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
 import { GuardService as AuthGuard } from './services/auth/guard.service';
+import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
+import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -173,6 +175,12 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
+  {path: 'prexam', component: PreExaminationObligationsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
   {path: 'changePassword/:id', component: ChangePasswordComponent},
   {path: 'updateProfile/:id', component: UpdateProfileComponent},
   {path: 'addExamDate', component: CreateExamDateComponent,
@@ -192,7 +200,19 @@ const routes: Routes = [
     data: {
       expectedRole: 'ADMIN'
     }
-  }
+  },
+  {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
+  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'ADMIN'
+    }
+  },
 ];
 
 @NgModule({

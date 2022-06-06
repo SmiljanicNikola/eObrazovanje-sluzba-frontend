@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PreExaminationObligations } from 'src/app/models/PreExaminationObligations';
+import { PreExamObligationService } from 'src/app/services/pre-exam-obligation/pre-exam-obligation.service';
 
 @Component({
   selector: 'app-pre-examination-obligations',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreExaminationObligationsComponent implements OnInit {
 
-  constructor() { }
+  preExaminationObligations: PreExaminationObligations[] = [];
+  preExamOb: any;
+
+  constructor(private preExamObligationSerice: PreExamObligationService, private router: Router) { }
+
 
   ngOnInit(): void {
+    this.preExamObligationSerice.getPreExamObligation().subscribe((preExaminationObligations) => this.preExamOb = preExaminationObligations)
   }
 
+  public updatePreExamObligation(id:number){
+    this.router.navigate(['updatePreExamObligation', id]);
+  }
+
+  public deletePreExamObligation(id:number){
+    let response = this.preExamObligationSerice.deletePreExamObligation(id);
+    response.subscribe((preExaminationObligations)=> this.preExamOb = preExaminationObligations);
+  }
+
+  public createPreExamObligation(){
+    this.router.navigate(['updatePreExamObligation']);
+  }
 }
