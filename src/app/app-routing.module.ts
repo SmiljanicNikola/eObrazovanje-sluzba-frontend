@@ -32,6 +32,7 @@ import { CreateSemestersComponent } from './components/create-semester/create-se
 import { GuardService as AuthGuard } from './services/auth/guard.service';
 import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
+import { ErrorPageComponent } from './components/404/404.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -39,7 +40,7 @@ const routes: Routes = [
   {path: 'studenti', component: StudentiComponent,
          canActivate:[AuthGuard],
          data: { 
-          expectedRole: 'STUDENT'
+          expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
         }},
   {path: 'updateStudent', component: UpdateStudentComponent,
         canActivate:[AuthGuard],
@@ -213,6 +214,7 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
+  {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({
