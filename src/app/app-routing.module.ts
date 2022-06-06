@@ -30,6 +30,7 @@ import { SubjectPerformanceComponent } from './components/subject-performance/su
 import { StudentSubjectComponent } from './components/student-subject/student-subject.component';
 import { CreateSemestersComponent } from './components/create-semester/create-semester.component';
 import { GuardService as AuthGuard } from './services/auth/guard.service';
+import { ErrorPageComponent } from './components/404/404.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -192,7 +193,8 @@ const routes: Routes = [
     data: {
       expectedRole: 'ADMIN'
     }
-  }
+  },
+  {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({

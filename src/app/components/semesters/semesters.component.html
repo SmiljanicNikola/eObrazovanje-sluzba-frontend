@@ -2,10 +2,17 @@
     <tr>
       <th>Semester Number</th>
       <th>Department Name</th>
+      <th></th>
     </tr>
     <tr *ngFor="let s of semesters">
       <td>{{ s.semesterNumber }}</td>
       <td>{{ s.department.name }}</td>
+      <td>
+        <button style="margin-left: 5px;" class="btn btn-info" >Update</button>
+        <button style="margin-left: 5px;" class="btn btn-danger" >Block</button>
+      </td>
     </tr>
   </table>
-  <button class="btn btn-primary" (click)="createSemester()">Add</button>
+  <div style="margin: 10px auto; width: 1%">
+    <button class="btn btn-primary" (click)="createSemester()">Add</button>
+  </div>
