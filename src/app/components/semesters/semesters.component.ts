@@ -26,4 +26,9 @@ export class SemesterComponent implements OnInit {
     this.router.navigate(['createSemester']);
   }
 
+  public deleteSemester(id: number) {
+    let response = this.semesterService.blockSemester(id);
+    response.subscribe((semesters)=> this.semesters = semesters)
+  }
+
 }

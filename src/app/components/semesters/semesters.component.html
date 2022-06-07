@@ -2,14 +2,16 @@
     <tr>
       <th>Semester Number</th>
       <th>Department Name</th>
+      <th>Deleted</th>
       <th></th>
     </tr>
     <tr *ngFor="let s of semesters">
       <td>{{ s.semesterNumber }}</td>
-      <td>{{ s.department.name }}</td>
+      <td>{{ s.department.id }}</td>
+      <td>{{ s.deleted }}</td>
       <td>
-        <button style="margin-left: 5px;" class="btn btn-info" >Update</button>
-        <button style="margin-left: 5px;" class="btn btn-danger" >Block</button>
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="updateSemester(s.id)" >Update</button>
+        <button style="margin-left: 5px;" class="btn btn-danger" (click)="deleteSemester(s.id)">Block</button>
       </td>
     </tr>
   </table>

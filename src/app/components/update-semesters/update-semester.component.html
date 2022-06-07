@@ -1,0 +1,18 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Create Department</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="semesterNumber">Semester Id</label>
+                <input type="text" class="form-control" [(ngModel)]="semester.semesterNumber" id="semesterNumber" required name="semesterNumber">
+            </div>
+            <div class="form-group">
+                <label for="department.id">Department</label>
+                <br />
+                <!-- <input type="text" class="form-control" [(ngModel)]="semesters.department" id="department.id" required name="department.id"> -->
+                <select class="form-control" [(ngModel)]="semester.department" name="department"> 
+                    <option *ngFor="let department of (departments$ | async)" id="department" required name="department">{{department.name}}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+</div>

@@ -44,4 +44,13 @@ export class SemesterService {
     return this.http.post<Semester>(this.apiSemestersUrl, semesters, createHeader);
   }
 
+  getSemesterById(id:number): Observable<any>{
+    return this.http.get(`${this.apiSemestersUrl}/${id}`);
+    
+  }
+
+  blockSemester(id:any) : Observable<any>{
+    console.log("bravo + ", id);
+    return this.http.delete<Semester>(`${this.apiSemestersUrl}/${id}`);
+  }
 }
