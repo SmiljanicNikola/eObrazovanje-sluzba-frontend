@@ -41,7 +41,7 @@ const routes: Routes = [
   {path: 'studenti', component: StudentiComponent,
          canActivate:[AuthGuard],
          data: { 
-          expectedRole: 'STUDENT'
+          expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
         }},
   {path: 'updateStudent', component: UpdateStudentComponent,
         canActivate:[AuthGuard],
@@ -95,7 +95,7 @@ const routes: Routes = [
   {path: 'updateLecturer/:id', component: UpdateLecturerComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'ADMIN'
+      expectedRole: ['ADMIN', 'LECTRER']
     }
   },
   {path: 'subjects', component: SubjectsComponent,
@@ -156,7 +156,7 @@ const routes: Routes = [
   {path: 'updateExam/:id', component: UpdateExamComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['LECTURER', 'ADMIN']
     }
   },
   {path: 'departments', component: DepartmentComponent,
@@ -184,9 +184,22 @@ const routes: Routes = [
     }
   },
   {path: 'prexam', component: PreExaminationObligationsComponent,
+  {path: 'changePassword/:id', component: ChangePasswordComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
+    }
+  },
+  {path: 'updateProfile/:id', component: UpdateProfileComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
+    }
+  },
+  {path: 'addExamDate', component: CreateExamDateComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['ADMIN', 'LECTURER']
     }
   },
   
@@ -230,7 +243,6 @@ const routes: Routes = [
   },
 
   {path: '**', component: ErrorPageComponent}
- 
 ];
 
 @NgModule({

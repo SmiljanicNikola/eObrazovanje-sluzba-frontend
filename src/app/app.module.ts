@@ -87,7 +87,8 @@ import { AttendingCourseComponent } from './components/attending-course/attendin
     CreateExamDateComponent,
     UpdatePreExamObligatinComponent,
     ErrorPageComponent,
-    AttendingCourseComponent
+    AttendingCourseComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username:string;
   password:string;
+  user: any;
+  showErrorMessage: any;
 
-  constructor(private authService:AuthService, private router: Router) {
-
-   }
+  constructor(private authService:AuthService, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -34,14 +34,17 @@ export class LoginComponent implements OnInit {
       password: this.password,
     };
 
-    this.authService.login(object).subscribe((value) => (localStorage.setItem("user",JSON.stringify(value))));
-    
-
+    this.authService.login(object).subscribe((value) => {
+      this.showErrorMessage = false;
+      console.log("TEST: " + JSON.stringify(value));
+      if ( value != null ) {
+        (localStorage.setItem("user",JSON.stringify(value)));
+        this.router.navigate(['home']);
+      } else {
+        this.showErrorMessage = true;
+      }
+    });
     this.username = '';
     this.password = '';
-
-    this.router.navigate(['home']);
-    
   }
-
 }
