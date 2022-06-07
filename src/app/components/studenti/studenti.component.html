@@ -43,9 +43,11 @@
     </td>
   </tr>
 </table>
+<ng-container *ngIf="role === 'STUDENT'">
 <div class="containerr">
   <div class="uploads"><p>Upload students: </p><app-upload-users></app-upload-users></div> <br/>
   <div class="uploads"><p>Documents: </p><app-documents></app-documents></div>
 </div>
+
   <app-passed-exams></app-passed-exams>
 
