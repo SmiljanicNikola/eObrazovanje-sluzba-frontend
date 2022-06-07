@@ -16,6 +16,7 @@ export class UpdateSemesterComponent implements OnInit {
   id:number;
   semester: Semester;
   departments$ : Observable<Departments[]>;
+  option:any;
 
   constructor(private route: ActivatedRoute, private router: Router, private semesterService: SemesterService, private departmentService: DepartmentsService) { }
 
@@ -31,6 +32,10 @@ export class UpdateSemesterComponent implements OnInit {
   }
   redirectToListOfAllSemesters(){
     this.router.navigate(['/semesters']);
+  }
+
+  onChange(option: any) {
+    this.option = option;
   }
 
   updateDepartment(){
