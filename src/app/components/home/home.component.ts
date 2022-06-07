@@ -23,8 +23,6 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService, private route: ActivatedRoute, private router:Router, private studentService: StudentService, private accountService: AccountService) { }
 
   ngOnInit(): void {
-
-    
     this.user = this.authService.getToken();
     //const { username } = JSON.parse(localStorage.getItem('user') || '{}');
     this.username = this.user.username
@@ -33,7 +31,6 @@ export class HomeComponent implements OnInit {
     this.studentService.getStudentByUsername(this.username).subscribe((student) => this.student = student)
 
     this.accountService.getAccountByStudentId(this.student.student_id).subscribe((acc) => this.account = acc)
-    console.log(this.account.accountBallance);
 
   }
 

@@ -94,7 +94,7 @@ const routes: Routes = [
   {path: 'updateLecturer/:id', component: UpdateLecturerComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'ADMIN'
+      expectedRole: ['ADMIN', 'LECTRER']
     }
   },
   {path: 'subjects', component: SubjectsComponent,
@@ -155,7 +155,7 @@ const routes: Routes = [
   {path: 'updateExam/:id', component: UpdateExamComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['LECTURER', 'ADMIN']
     }
   },
   {path: 'departments', component: DepartmentComponent,
@@ -182,12 +182,22 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
-  {path: 'changePassword/:id', component: ChangePasswordComponent},
-  {path: 'updateProfile/:id', component: UpdateProfileComponent},
+  {path: 'changePassword/:id', component: ChangePasswordComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
+    }
+  },
+  {path: 'updateProfile/:id', component: UpdateProfileComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
+    }
+  },
   {path: 'addExamDate', component: CreateExamDateComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['ADMIN', 'LECTURER']
     }
   },
   {path: 'createSemester', component: CreateSemestersComponent,
