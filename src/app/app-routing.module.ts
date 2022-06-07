@@ -185,6 +185,12 @@ const routes: Routes = [
     }
   },
   {path: 'prexam', component: PreExaminationObligationsComponent,
+    canActivate:[AuthGuard],
+    data:{
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT'] 
+    }
+  },
+
   {path: 'changePassword/:id', component: ChangePasswordComponent,
     canActivate:[AuthGuard],
     data: {
