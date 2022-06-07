@@ -12,12 +12,11 @@
     <td>{{ p.examDate.name }}</td>
     <td>{{ p.subjectPerformance.subject.name }}</td>
     <td>{{ p.typeOfRequirement.name }}</td>     
-  
-  <td>
-  <button *ngIf="!p.blocked" style="margin-left: 5px;" class="btn btn-danger" (click)="deletePreExamObligation(p.pre_examination_obligation_id)">Block</button>
-      <p *ngIf="p.blocked">This requirements are deletetd</p>
+  <td *ngIf="user.roles == 'LECTURER'">
   <button style="margin-left: 5px;" class="btn btn-info" (click)="updatePreExamObligation(p.pre_examination_obligation_id)">Update</button>
   </td>
 </tr>
-<button style="margin-left: 5px;" class="btn btn-info" (click)="createPreExamObligation()">Create</button>
+<td *ngIf="user.roles == 'LECTURER'">
+<button  style="margin-left: 5px;" class="btn btn-info" (click)="createPreExamObligation()">Create</button>
+</td>
 </table>

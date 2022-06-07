@@ -32,6 +32,7 @@ import { CreateSemestersComponent } from './components/create-semester/create-se
 import { GuardService as AuthGuard } from './services/auth/guard.service';
 import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
+import { ErrorPageComponent } from './components/404/404.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -56,7 +57,7 @@ const routes: Routes = [
   {path: 'choseStudent/:id', component:StudentSubjectComponent,
     canActivate:[AuthGuard],
     data: {
-    expectedRole: 'STUDENT'
+    expectedRole: 'LECTURER'
   }
 
   },
@@ -178,7 +179,26 @@ const routes: Routes = [
   {path: 'prexam', component: PreExaminationObligationsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'ADMIN'
+      expectedRole: 'STUDENT'
+    }
+  },
+  {path: 'prexam', component: PreExaminationObligationsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  
+  {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
     }
   },
   {path: 'changePassword/:id', component: ChangePasswordComponent},
@@ -201,18 +221,9 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
-  {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
-  canActivate:[AuthGuard],
-    data: {
-      expectedRole: 'ADMIN'
-    }
-  },
-  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
-  canActivate:[AuthGuard],
-    data: {
-      expectedRole: 'ADMIN'
-    }
-  },
+
+  {path: '**', component: ErrorPageComponent}
+ 
 ];
 
 @NgModule({

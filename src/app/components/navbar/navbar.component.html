@@ -6,14 +6,19 @@
             <li><a href="subjects">Subjects</a></li>
             <li><a href="examDates">Exam Dates</a></li>
             <li><a href="lecturers">Lecturers</a></li>
+            <li><a href="semesters">Semesters</a></li>
+            <li><a href="departments">Departments</a></li>
+            <li><a href="admins">Admins</a></li>
+            <li><a href="subject-performance">Subject Performance</a></li>
             <li><a href="login" (click)="logout()">Log out</a></li>
-          </ul>  
+          </ul>
     </div>
     <div *ngIf="user.roles == 'STUDENT'">
         <ul>
             <li><a href="home">Home</a></li>
             <li><a href="subjects">Subjects</a></li>
             <li><a href="examDates">Exam Dates</a></li>
+            <li><a href="prexam">Pre exam obligation</a></li>
             <li><a href="login" (click)="logout()">Log out</a></li>
           </ul>  
     </div>
@@ -23,6 +28,8 @@
             <li><a href="profile">Profile</a></li>
             <li><a href="lecturersTakenExam">My Exams</a></li>
             <li><a href="examDates">Exam Dates</a></li>
+            <li><a href="subject-performance">Subject Performance</a></li>
+            <li><a href="prexam">Pre exam obligation</a></li>
             <li><a href="login" (click)="logout()">Log out</a></li>
           </ul>
     </div>

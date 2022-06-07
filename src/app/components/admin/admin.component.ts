@@ -31,11 +31,8 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['updateAdmin', id]);
   }
 
-  public adminDelatis(id:number){
-    let response = this.adminService.getAdminById(id);
-    response.subscribe((admin)=> this.admin = admin)
-    console.log(this.admin);
-    this.router.navigate(['adminDetails', id]);
+  public createAdmin() {
+    this.router.navigate(['addAdmin']);
   }
 
 }
