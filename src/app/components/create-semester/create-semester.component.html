@@ -9,9 +9,9 @@
                 <label for="department.id">Department</label>
                 <br />
                 <!-- <input type="text" class="form-control" [(ngModel)]="semesters.department" id="department.id" required name="department.id"> -->
-                <select class="form-control" [(ngModel)]="semesters.department" name="department"> 
-                    <option *ngFor="let department of (departments$ | async)" id="department" required name="department">{{department.name}}</option>
-                </select>
+                <select class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="semesters.department" name="department"> 
+                    <option *ngFor="let department of (departments$ | async)" id="department" [ngValue]="department" required name="department">{{department.name}}</option>
+                </select> 
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form> 

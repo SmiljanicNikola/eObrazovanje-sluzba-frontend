@@ -15,6 +15,7 @@ export class CreateSemestersComponent implements OnInit {
 
   id:number;
   departments: Departments;
+  option: any;
   semesters: Semester;
 
   departments$ : Observable<Departments[]>;
@@ -31,7 +32,7 @@ export class CreateSemestersComponent implements OnInit {
 
   createSemester(){
     this.semestersService.createSemester(this.semesters).subscribe(data=>{
-      console.log(data.department);
+      console.log(this.option);
       this.semesters = new Semester();
       this.redirectToListOfAllSemesters();
     }, error=>console.log(error));
@@ -40,6 +41,8 @@ export class CreateSemestersComponent implements OnInit {
     this.createSemester();
   }
 
- 
+  onChange(option: any) {
+    this.option = option;
+  }
 
 }
