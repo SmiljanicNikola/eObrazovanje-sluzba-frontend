@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
         CommonModule
     ]
 })
-  admins: Admin[] = [];
+  admins: any[] = [];
   admin: any;
 
 

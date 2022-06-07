@@ -34,6 +34,7 @@ import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-ob
 import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
 import { ErrorPageComponent } from './components/404/404.component';
 import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
+import { UpdateSemesterComponent } from './components/update-semesters/update-semester.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -236,7 +237,7 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
-  {path: 'updateSemester/:id', component: UpdateStudentComponent,
+  {path: 'updateSemester/:id', component: UpdateSemesterComponent,
   canActivate:[AuthGuard],
     data: {
       expectedRole: 'ADMIN'

@@ -1,20 +1,21 @@
 <table id="admins-table">
     <tr>
-      <th>Id</th>
       <th>Lastname</th>
       <th>Firstname</th>
       <th>Username</th>
       <th>Adress</th>
+      <th>Action</th>
     </tr>
     <tr *ngFor="let a of admins">
-      <td> {{ a.admin_id }} </td>
-      <td>{{ a.firstname }}</td>
+      <td>{{a.surname}}</td>
+      <td>{{ a.name }}</td>
+      <td>{{ a.username }}</td>
       <td>{{ a.address }}</td>
-      <td>{{a.lastname}}</td>
+
       <td>  
-        <button style="margin-left: 500px;" class="btn btn-info" (click)="updateAdmin(a.admin_id)">Update</button>
+        <button  class="btn btn-info" (click)="updateAdmin(a.admin_id)">Update</button>
       </td>  
     </tr>
-    <button  style="margin-left: 5px;" class="btn btn-info" (click)="createAdmin()">Create Admin</button>
+    <button  class="btn btn-info" (click)="createAdmin()">Create Admin</button>
 </table>
     

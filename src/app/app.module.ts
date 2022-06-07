@@ -47,9 +47,12 @@ import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-ob
 import { ErrorPageComponent } from './components/404/404.component';
 import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
 import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
+import { CommonModule } from '@angular/common';
+import { AdminComponent } from './components/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
     LoginComponent,
     StudentiComponent,
     LecturersComponent,
@@ -92,6 +95,7 @@ import { AttendingCourseComponent } from './components/attending-course/attendin
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
