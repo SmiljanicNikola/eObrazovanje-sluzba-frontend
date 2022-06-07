@@ -13,7 +13,7 @@
       <td>{{ p.amount }}</td>
       <td>{{ p.dateOfPayment }}</td>
       <td>
-        <button style="margin-left: 10px;" class="btn btn-warning">Check Transaction</button><br>
+        <button style="margin-left: 10px;" (click)="paymentDetails(p.id)" class="btn btn-warning">Check Transaction</button><br>
       </td>
     </tr>
     

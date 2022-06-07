@@ -16,6 +16,7 @@ export class PaymentHistoryComponent implements OnInit {
   payments: Payment[] = [];
   accountId : number;
   user: any;
+  payment: Payment;
 
   constructor(private route: ActivatedRoute, private router:Router, private accountService: AccountService, private paymentService: PaymentService, private authService: AuthService) { }
 
@@ -28,6 +29,14 @@ export class PaymentHistoryComponent implements OnInit {
     this.paymentService.getPaymentsByAccountId(this.accountId)
     .subscribe((payments) => this.payments = payments)
     
+  }
+
+
+  public paymentDetails(id:number){
+    let response = this.paymentService.getPaymentById(id);
+    response.subscribe((payments)=> this.payments = payments)
+    console.log(this.payments);
+    this.router.navigate(['paymentDetails', id]);
   }
 
 }

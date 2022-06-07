@@ -45,6 +45,7 @@ import { CreateSemestersComponent } from './components/create-semester/create-se
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { ErrorPageComponent } from './components/404/404.component';
+import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { ErrorPageComponent } from './components/404/404.component';
     CreateSemestersComponent,
     CreateExamDateComponent,
     UpdatePreExamObligatinComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    PaymentDetailsComponent
   ],
   imports: [
     BrowserModule,

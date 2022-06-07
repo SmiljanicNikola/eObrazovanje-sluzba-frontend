@@ -45,7 +45,7 @@ const routes: Routes = [
   {path: 'updateStudent', component: UpdateStudentComponent,
         canActivate:[AuthGuard],
         data: {
-          expectedRole: 'STUDENT'
+          expectedRole: ['STUDENT','ADMIN']
         }
   },
   {path: 'subject-performance', component:SubjectPerformanceComponent,
@@ -100,7 +100,7 @@ const routes: Routes = [
   {path: 'subjects', component: SubjectsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: ['STUDENT','ADMIN']
     }
   },
   {path: 'semesters', component: SemesterComponent,
@@ -118,13 +118,13 @@ const routes: Routes = [
   {path: 'studentDetails/:id', component: StudentDetailsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: ['STUDENT','ADMIN']
     }
   },
   {path: 'updateStudent/:id', component: UpdateStudentComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: ['STUDENT','ADMIN']
     }
   },
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent,
@@ -142,7 +142,8 @@ const routes: Routes = [
   {path: 'examDates', component: ExamDatesComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
+
     }
   },
   {path: 'home', component: HomeComponent},
