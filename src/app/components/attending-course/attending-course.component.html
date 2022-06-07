@@ -1,0 +1,11 @@
+<table id="students-table">
+    <tr>
+      <th>Students name</th>
+      <th>Subject name</th>
+    </tr>
+    <tr *ngFor="let a of attending">
+      <td> {{ a.student.username }} </td>
+      <td>{{ a.subjectPerformance.subject.name }}</td>
+    </tr>
+    <button  style="margin-left: 5px;" class="btn btn-info" (click)="addStudent()">Add student to class</button>
+</table>
