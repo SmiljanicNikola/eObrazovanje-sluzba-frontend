@@ -45,13 +45,25 @@
         <div  class="field">
           <label><b>Username: </b></label> {{user.username}}
         </div>
+        <div  class="field">
+          <label><b>surname: </b></label> {{userReal.surname}}
+        </div>
+        <div  class="field">
+          <label><b>Name: </b></label> {{userReal.name}}
+        </div>
+        <div  class="field">
+          <label><b>Address: </b></label> {{userReal.address}}
+        </div>
+        <div  class="field">
+        <label><b>Jmbg: </b></label> {{userReal.jmbg}}
+      </div>
        
         <div  class="field">
           <label><b>Role: </b></label> {{user.roles}}
         </div>
         <div class="buttons">
-          <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
-          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+          <button style="margin-left: 10px;" (click)="changeProfile(user.id)" class="btn btn-warning">Change Info</button><br>
+          <button style="margin-left: 10px;" (click)="changePassword(user.id)" class="btn btn-danger">Change Password</button><br>
         </div>
       <br>
   </div>
@@ -65,13 +77,25 @@
         <div  class="field">
           <label><b>Username: </b></label> {{user.username}}
         </div>
-       
+        <div  class="field">
+          <label><b>surname: </b></label> {{userReal.surname}}
+        </div>
+        <div  class="field">
+          <label><b>Name: </b></label> {{userReal.name}}
+        </div>
+        <div  class="field">
+          <label><b>Address: </b></label> {{userReal.address}}
+        </div>
+        <div  class="field">
+          <label><b>Jmbg: </b></label> {{userReal.jmbg}}
+        </div>
+
         <div  class="field">
           <label><b>Role: </b></label> {{user.roles}}
         </div>
         <div class="buttons">
-          <button style="margin-left: 10px;" class="btn btn-warning">Change Info</button><br>
-          <button style="margin-left: 10px;" class="btn btn-danger">Change Password</button><br>
+          <button style="margin-left: 10px;" (click)="changeProfile(user.id)" class="btn btn-warning">Change Info</button><br>
+          <button style="margin-left: 10px;" (click)="changePassword(user.id)" class="btn btn-danger">Change Password</button><br>
         </div>
 
       <br>

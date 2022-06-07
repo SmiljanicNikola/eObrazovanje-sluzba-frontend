@@ -25,7 +25,6 @@ export class UpdateProfileComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
 
     this.userService.getUserById(this.id).subscribe(data=>{
-      console.log(data)
       this.user = data
     }, error=> console.log(error));
     

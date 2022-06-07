@@ -131,7 +131,7 @@ const routes: Routes = [
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: ['STUDENT','ADMIN']
     }
   },
   {path: 'paymentHistory/:id', component: PaymentHistoryComponent,
