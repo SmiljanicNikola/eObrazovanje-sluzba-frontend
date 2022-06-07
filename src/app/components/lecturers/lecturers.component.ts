@@ -21,12 +21,9 @@ export class LecturersComponent implements OnInit {
   public updateLecturer(id:number){
     this.router.navigate(["updateLecturer", id]);
   }
-
-  public lecturerDetails(id:number){
-    let response = this.lecturerService.getLecturerById(id);
-    response.subscribe((lecturer)=> this.lecturer = lecturer)
-    console.log(this.lecturer);
-    this.router.navigate(['/lectuerDetails', id]);
+  
+  public createLecturer() {
+    this.router.navigate(['addLecturer']);
   }
 
   public deleteLecturer(id:number){

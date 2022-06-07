@@ -33,6 +33,7 @@ import { GuardService as AuthGuard } from './services/auth/guard.service';
 import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { PreExaminationObligationsComponent } from './components/pre-examination-obligations/pre-examination-obligations.component';
 import { ErrorPageComponent } from './components/404/404.component';
+import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -51,13 +52,13 @@ const routes: Routes = [
   {path: 'subject-performance', component:SubjectPerformanceComponent,
         canActivate:[AuthGuard],
         data: {
-          expectedRole: 'STUDENT'
+          expectedRole: 'ADMIN'
         }
   },
   {path: 'choseStudent/:id', component:StudentSubjectComponent,
     canActivate:[AuthGuard],
     data: {
-    expectedRole: 'STUDENT'
+    expectedRole: 'ADMIN'
   }
 
   },
@@ -179,9 +180,10 @@ const routes: Routes = [
   {path: 'prexam', component: PreExaminationObligationsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'ADMIN'
+      expectedRole: 'STUDENT'
     }
   },
+  {path: 'prexam', component: PreExaminationObligationsComponent,
   {path: 'changePassword/:id', component: ChangePasswordComponent,
     canActivate:[AuthGuard],
     data: {
@@ -200,6 +202,27 @@ const routes: Routes = [
       expectedRole: ['ADMIN', 'LECTURER']
     }
   },
+  
+  {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
+  canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
+  {path: 'changePassword/:id', component: ChangePasswordComponent},
+  {path: 'updateProfile/:id', component: UpdateProfileComponent},
+  {path: 'addExamDate', component: CreateExamDateComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: 'LECTURER'
+    }
+  },
   {path: 'createSemester', component: CreateSemestersComponent,
     canActivate:[AuthGuard],
     data: {
@@ -212,18 +235,13 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
-  {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
-  canActivate:[AuthGuard],
-    data: {
-      expectedRole: 'ADMIN'
-    }
+  {path: 'attending-course', component: AttendingCourseComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: 'ADMIN'
+        }
   },
-  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
-  canActivate:[AuthGuard],
-    data: {
-      expectedRole: 'ADMIN'
-    }
-  },
+
   {path: '**', component: ErrorPageComponent}
 ];
 
