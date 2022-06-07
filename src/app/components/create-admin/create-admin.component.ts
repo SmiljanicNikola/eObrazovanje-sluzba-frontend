@@ -18,15 +18,15 @@ export class CreateAdminComponent implements OnInit {
     this.admin = new Admin();
   }
 
-  redirectToListOfAllStudents(){
-    this.router.navigate(['/studenti']);
+  redirectToHome(){
+    this.router.navigate(['/home']);
   }
   createAdmin(){
     this.adminService.createAdmin(this.admin).subscribe(data=>{
       console.log(data);
       this.admin = new Admin();
       console.log(this.admin);
-      this.redirectToListOfAllStudents();
+      this.redirectToHome();
     },
     error=>console.log(error));
   }

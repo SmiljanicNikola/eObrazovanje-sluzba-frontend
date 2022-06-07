@@ -15,12 +15,15 @@ export class StudentiComponent implements OnInit {
 
   students: Student[] = [];
   student: any;
+  role:string;
 
 
   constructor(private studentService: StudentService, private router: Router) { }
 
 
   ngOnInit(): void {
+    const { roles } = JSON.parse(localStorage.getItem('user') || '{}');
+    this.role = roles[0];
     this.studentService.getStudents().subscribe((students) => this.students = students)
   }
 

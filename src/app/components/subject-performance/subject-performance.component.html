@@ -2,12 +2,13 @@
     <tr>
       <th>Subject Name</th>
       <th>School year</th>
+      <th>Action</th>
     </tr>
     <tr *ngFor="let s of subjectPerformances">
       <td> {{ s.subject.name }} </td>
       <td>{{ s.school_year }}</td>
       <td>
-        <button style="margin-left: 5px;" class="btn btn-primary" (click)="choseSubject(s.subject_performance_id)">View</button>
+        <button style="margin-left: 5px;" class="btn btn-primary" (click)="choseSubject(s.subject_performance_id)">Chose</button>
       </td>     
     </tr>
   </table>

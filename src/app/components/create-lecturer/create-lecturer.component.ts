@@ -18,15 +18,15 @@ export class CreateLecturerComponent implements OnInit {
     this.lecturer = new Lecturer();
   }
 
-  redirectToListOfAllLecturers(){
-    this.router.navigate(['/lecturers']);
+  redirectToHome(){
+    this.router.navigate(['/home']);
   }
   createLecturer(){
     this.lecturerService.createLecturer(this.lecturer).subscribe(data=>{
       console.log(data);
       this.lecturer = new Lecturer();
       console.log(this.lecturer);
-      this.redirectToListOfAllLecturers();
+      this.redirectToHome();
     },
     error=>console.log(error));
   }

@@ -45,7 +45,11 @@ import { CreateSemestersComponent } from './components/create-semester/create-se
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 import { UpdatePreExamObligatinComponent } from './components/update-pre-exam-obligatin/update-pre-exam-obligatin.component';
 import { ErrorPageComponent } from './components/404/404.component';
+<<<<<<< HEAD
 import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
+=======
+import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
+>>>>>>> 751bada2b57ca3c39e372d4bacfce4a7acc3537b
 
 
 @NgModule({
@@ -87,7 +91,12 @@ import { PaymentDetailsComponent } from './components/payment-details/payment-de
     CreateExamDateComponent,
     UpdatePreExamObligatinComponent,
     ErrorPageComponent,
+<<<<<<< HEAD
     PaymentDetailsComponent
+=======
+    AttendingCourseComponent,
+    ErrorPageComponent
+>>>>>>> 751bada2b57ca3c39e372d4bacfce4a7acc3537b
   ],
   imports: [
     BrowserModule,
