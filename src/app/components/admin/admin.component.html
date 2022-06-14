@@ -4,18 +4,14 @@
       <th>Firstname</th>
       <th>Username</th>
       <th>Adress</th>
-      <th>Action</th>
     </tr>
     <tr *ngFor="let a of admins">
       <td>{{a.surname}}</td>
       <td>{{ a.name }}</td>
       <td>{{ a.username }}</td>
       <td>{{ a.address }}</td>
-
-      <td>  
-        <button  class="btn btn-info" (click)="updateAdmin(a.admin_id)">Update</button>
-      </td>  
     </tr>
-    <button  class="btn btn-info" (click)="createAdmin()">Create Admin</button>
+      <button class="btn btn-info" (click)="createAdmin()">Add Admin</button>
 </table>
+
     

@@ -44,26 +44,7 @@ const routes: Routes = [
          data: { 
           expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
         }},
-  {path: 'updateStudent', component: UpdateStudentComponent,
-        canActivate:[AuthGuard],
-        data: {
-          expectedRole: ['STUDENT','ADMIN']
-        }
-  },
-  {path: 'subject-performance', component:SubjectPerformanceComponent,
-        canActivate:[AuthGuard],
-        data: {
-          expectedRole: 'ADMIN'
-        }
-  },
-  {path: 'choseStudent/:id', component:StudentSubjectComponent,
-    canActivate:[AuthGuard],
-    data: {
-    expectedRole: 'ADMIN'
-  }
-
-  },
-  {path: 'admins', component: AdminComponent,
+        {path: 'admins', component: AdminComponent,
     canActivate:[AuthGuard],
     data: {
       expectedRole: 'ADMIN'
@@ -75,12 +56,47 @@ const routes: Routes = [
       expectedRole: 'ADMIN'
     }
   },
+  {path: 'choseStudent/:id', component:StudentSubjectComponent,
+    canActivate:[AuthGuard],
+    data: {
+    expectedRole: 'ADMIN'
+  }
+  },
+  
   {path: 'addStudent', component: CreateStudentsComponent,
     canActivate:[AuthGuard],
     data: {
       expectedRole: 'ADMIN'
     }
   },
+  {path: 'updateStudent', component: UpdateStudentComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: ['STUDENT','ADMIN']
+        }
+  },
+
+  {path: 'studentDetails/:id', component: StudentDetailsComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['STUDENT','ADMIN']
+    }
+  },
+  
+  {path: 'updateStudent/:id', component: UpdateStudentComponent,
+    canActivate:[AuthGuard],
+    data: {
+      expectedRole: ['STUDENT','ADMIN']
+    }
+  },
+
+  {path: 'subject-performance', component:SubjectPerformanceComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: 'ADMIN'
+        }
+  },
+  
   {path: 'lecturers', component: LecturersComponent,
     canActivate:[AuthGuard],
     data: {
@@ -96,7 +112,7 @@ const routes: Routes = [
   {path: 'updateLecturer/:id', component: UpdateLecturerComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: ['ADMIN', 'LECTRER']
+      expectedRole: "ADMIN"
     }
   },
   {path: 'subjects', component: SubjectsComponent,
@@ -117,18 +133,7 @@ const routes: Routes = [
       expectedRole: 'STUDENT'
     }
   },
-  {path: 'studentDetails/:id', component: StudentDetailsComponent,
-    canActivate:[AuthGuard],
-    data: {
-      expectedRole: ['STUDENT','ADMIN']
-    }
-  },
-  {path: 'updateStudent/:id', component: UpdateStudentComponent,
-    canActivate:[AuthGuard],
-    data: {
-      expectedRole: ['STUDENT','ADMIN']
-    }
-  },
+
   {path: 'bankAccountDetails/:id', component: BankAccountDetailsComponent,
     canActivate:[AuthGuard],
     data: {
@@ -181,12 +186,6 @@ const routes: Routes = [
   },
   {path: 'prexam', component: PreExaminationObligationsComponent,
     canActivate:[AuthGuard],
-    data: {
-      expectedRole: 'STUDENT'
-    }
-  },
-  {path: 'prexam', component: PreExaminationObligationsComponent,
-    canActivate:[AuthGuard],
     data:{
       expectedRole: ['ADMIN', 'LECTURER', 'STUDENT'] 
     }
@@ -214,13 +213,13 @@ const routes: Routes = [
   {path: 'updatePreExamObligation/:id', component: UpdatePreExamObligatinComponent,
   canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
     }
   },
-  {path: 'updatePreExamObligation/', component: UpdatePreExamObligatinComponent,
+  {path: 'updatePreExamObligation', component: UpdatePreExamObligatinComponent,
   canActivate:[AuthGuard],
     data: {
-      expectedRole: 'LECTURER'
+      expectedRole: ['ADMIN', 'LECTURER', 'STUDENT']
     }
   },
   {path: 'changePassword/:id', component: ChangePasswordComponent},

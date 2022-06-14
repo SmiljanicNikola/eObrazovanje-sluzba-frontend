@@ -1,22 +1,25 @@
 <table id="students-table">
   <tr>
-    <th>mandatory</th>
-    <th>points</th>
-    <th>examDate</th>
-    <th>subjectPerformance</th>
-    <th>typeOfRequirement</th>
+    <th>Subject</th>
+    <th>Mandatory</th>
+    <th>Points</th>
+    <th>ExamDate</th>
+    <th>Subject performance</th>
+    <th>Type of requirement</th>
+    <th *ngIf="user.roles.includes('LECTURER')  || user.roles.includes('ADMIN') ">Action</th>
   </tr>
   <tr *ngFor="let p of preExamOb">
+    <td>{{ p.subjectPerformance.subject.name}}</td>
     <td>{{ p.mandatory }}</td>
     <td>{{ p.points }}</td>
-    <td>{{ p.examDate.name }}</td>
-    <td>{{ p.subjectPerformance.subject.name }}</td>
-    <td>{{ p.typeOfRequirement.name }}</td>     
-  <td *ngIf="user.roles == 'LECTURER'">
+    <td>{{ p.examDate.date }}</td>
+    <td>{{ p.subjectPerformance.subject.syllabus }}</td>
+    <td>{{ p.typeOfRequirement.name }}</td>
+  <td *ngIf="user.roles.includes('LECTURER')  || user.roles.includes('ADMIN') ">
   <button style="margin-left: 5px;" class="btn btn-info" (click)="updatePreExamObligation(p.pre_examination_obligation_id)">Update</button>
   </td>
 </tr>
-<td *ngIf="user.roles == 'LECTURER'">
+<td *ngIf="user.roles.includes('LECTURER')  || user.roles.includes('ADMIN') ">
 <button  style="margin-left: 5px;" class="btn btn-info" (click)="createPreExamObligation()">Create</button>
 </td>
 </table>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LecturerDTO } from 'src/app/models/DTO/LecturerDTO';
 import { Lecturer } from 'src/app/models/Lecturer';
 import { LecturerService } from 'src/app/services/lecturers/lecturer.service';
 
@@ -11,20 +12,21 @@ import { LecturerService } from 'src/app/services/lecturers/lecturer.service';
 export class CreateLecturerComponent implements OnInit {
 
   id:number;
-  lecturer: Lecturer;
+  lecturer: LecturerDTO;
   constructor(private route: ActivatedRoute, private router: Router, private lecturerService: LecturerService ) { }
 
   ngOnInit(): void {
-    this.lecturer = new Lecturer();
+    this.lecturer = new LecturerDTO();
   }
 
   redirectToHome(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/lecturers']);
   }
   createLecturer(){
-    this.lecturerService.createLecturer(this.lecturer).subscribe(data=>{
+    
+      this.lecturerService.createLecturer(this.lecturer).subscribe(data=>{
       console.log(data);
-      this.lecturer = new Lecturer();
+      this.lecturer = new LecturerDTO();
       console.log(this.lecturer);
       this.redirectToHome();
     },
@@ -33,5 +35,7 @@ export class CreateLecturerComponent implements OnInit {
   onSubmit(){
     this.createLecturer();
   }
+
+  
 
 }

@@ -14,9 +14,9 @@
                 </select>            
             </div>
             <div class="form-group">
-                <label for="subjectPerformance">Subject Performance</label>
+                <label for="subjectPerformance">Syllabus</label>
                 <select [(ngModel)]="preExamObligations.subjectPerformanceId" id="subjectPerformanceId" required name="subjectPerformanceId">
-                <option *ngFor="let subjectPerformance of subjectPerformances" value = {{subjectPerformance.subject_performance_id}}>{{subjectPerformance.subject?.name}}-{{subjectPerformance.school_year}}</option>
+                <option *ngFor="let subjectPerformance of subjectPerformances" value = {{subjectPerformance.subject_performance_id}}>{{subjectPerformance.subject?.syllabus}}-{{subjectPerformance.school_year}}</option>
                 </select>              
             </div>
             <div class="form-group">

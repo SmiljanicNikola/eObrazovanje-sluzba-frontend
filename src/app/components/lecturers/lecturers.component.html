@@ -1,29 +1,27 @@
 <table id="lecturers-table">
   <tr>
+    <th>Username</th>
     <th>Firstname</th>
     <th>Lastname</th>
-    <th>Username</th>
-    <th>Address</th>
     <th>JMBG</th>
+    <th>Address</th>
     <th>Pay</th>
-    <th>Is Blocked</th>
     <th>Actions</th>
   </tr>
   <tr *ngFor="let l of lecturers">
+    <td>{{ l.username }}</td>
     <td>{{ l.name }}</td>
     <td>{{ l.surname }}</td>
-    <td>{{ l.username }}</td>
-    <td>{{ l.address }}</td>
     <td>{{ l.jmbg }}</td>
+    <td>{{ l.address }}</td>
     <td>{{ l.pay }}</td>
-    <td>{{ l.blocked }}</td>
     <td>  
       <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-danger" (click)="deleteLecturer(l.lecturer_Id)">Block</button>
       <p *ngIf="l.blocked">This lecturer is blocked</p>
-      <button style="margin-left: 5px;" class="btn btn-danger" [routerLink]="['/updateLecturer',l.lecturer_Id]">Update</button>
+      <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-danger" [routerLink]="['/updateLecturer',l.lecturer_Id]">Update</button>
       <button style="margin-left: 5px;" class="btn btn-primary">View Schedule</button>
     </td>
   </tr>
-  <button  style="margin-left: 5px;" class="btn btn-info" (click)="createLecturer()">Create Admin</button>
+  <button  style="margin-left: 5px;" class="btn btn-info" (click)="createLecturer()">Add Lecturer</button>
 
 </table>

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Lecturer } from 'src/app/models/Lecturer';
 import {environment} from '../../../environments/environment'
+import { LecturerDTO } from 'src/app/models/DTO/LecturerDTO';
 
 const createHeader = {
   headers: new HttpHeaders({
@@ -45,7 +46,7 @@ export class LecturerService {
     return this.http.delete(`${this.apiLecturerUrl}/${id}`);
   }
 
-  createLecturer(lecturer:Lecturer) : Observable<Lecturer>{
+  createLecturer(lecturer:LecturerDTO) : Observable<Lecturer>{
     return this.http.post<Lecturer>(this.apiLecturerUrl, lecturer, createHeader)
   }
   updateLecturer(lecturer: any): Observable<Lecturer>{
