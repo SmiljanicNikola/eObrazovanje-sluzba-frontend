@@ -41,12 +41,12 @@ export class BankAccountDetailsComponent implements OnInit {
     response.subscribe((payments)=> this.payments = payments)
     console.log(this.payments);
     this.router.navigate(['paymentHistory', id]);
-
-
   }
 
-
+  public addPayment(id:number) {
+    this.router.navigate(['createPayment', id]);
   }
+}
 
 
 

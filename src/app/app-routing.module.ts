@@ -35,6 +35,7 @@ import { PreExaminationObligationsComponent } from './components/pre-examination
 import { ErrorPageComponent } from './components/404/404.component';
 import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
 import { UpdateSemesterComponent } from './components/update-semesters/update-semester.component';
+import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -248,6 +249,12 @@ const routes: Routes = [
         data: {
           expectedRole: 'ADMIN'
         }
+  },
+  {path: 'createPayment/:id', component: CreatePaymentComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: ['ADMIN', 'STUDENT']
+      }
   },
 
   {path: '**', component: ErrorPageComponent}

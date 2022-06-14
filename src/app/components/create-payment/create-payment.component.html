@@ -1,0 +1,25 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Add Payment</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="hidden" class="form-control" [(ngModel)]="payment.account.account_id" [value]="id" id="id" required name="id">
+            </div>
+            <div class="form-group">
+                <label for="payment_id">Payment ID</label>
+                <input type="text" class="form-control" [(ngModel)]="payment.id" id="payment_id" required name="payment_id">
+            </div>
+            <div class="form-group">
+                <label for="purposeOfPayment">Purpose of Payment</label>
+                <input type="text" class="form-control" [(ngModel)]="payment.purposeOfPayment" id="purposeOfPayment" required name="purposeOfPayment">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" class="form-control" [(ngModel)]="payment.amount" id="amount" required name="amount">
+            </div>
+            <div class="form-group">
+                <label for="dateOfPayment">Date</label>
+                <input type="date" class="form-control" [(ngModel)]="payment.dateOfPayment" id="dateOfPayment" required name="dateOfPayment">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+</div>
