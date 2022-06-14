@@ -36,6 +36,8 @@ import { ErrorPageComponent } from './components/404/404.component';
 import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
 import { UpdateSemesterComponent } from './components/update-semesters/update-semester.component';
 import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
+import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
+import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -54,7 +56,7 @@ const routes: Routes = [
   {path: 'subject-performance', component:SubjectPerformanceComponent,
         canActivate:[AuthGuard],
         data: {
-          expectedRole: 'ADMIN'
+          expectedRole: ['ADMIN', 'LECTURER']
         }
   },
   {path: 'choseStudent/:id', component:StudentSubjectComponent,
@@ -250,10 +252,22 @@ const routes: Routes = [
           expectedRole: 'ADMIN'
         }
   },
-  {path: 'createPayment/:id', component: CreatePaymentComponent,
+  {path: 'createPayment', component: CreatePaymentComponent,
       canActivate:[AuthGuard],
       data: {
         expectedRole: ['ADMIN', 'STUDENT']
+      }
+  },
+  {path: 'createSubject', component: CreateSubjectComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'ADMIN'
+      }
+  },
+  {path: 'updateSubject/:id', component: UpdateSubjectComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'ADMIN'
       }
   },
 

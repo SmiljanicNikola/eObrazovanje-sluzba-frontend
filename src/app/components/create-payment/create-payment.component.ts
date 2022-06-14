@@ -18,17 +18,19 @@ export class CreatePaymentComponent implements OnInit {
   id:number;
   payment: Payment;
   account: Account;
-  accounts: Observable<Account[]>;
+  accounts$: Observable<Account[]>;
+  option: any;
 
   constructor(private route: ActivatedRoute, private router: Router, private paymentService: PaymentService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.payment = new Payment();
     this.id = this.route.snapshot.params['id'];
-    this.accounts = this.accountService.getDepartmentById(this.id);
+    this.accounts$ = this.accountService.getAccounts();
+    console.log(this.accounts$);
   }
-  redirectToBackAccountDetails(id: number){
-    this.router.navigate(['/bankAccountDetails', {id}]);
+  redirectToPayments(){
+    this.router.navigate(['/payments']);
   }
 
   createPayment(){
@@ -36,10 +38,14 @@ export class CreatePaymentComponent implements OnInit {
       console.log(data);
       this.payment = new Payment();
       console.log(this.payment);
-      this.redirectToBackAccountDetails(data.id);
+      this.redirectToPayments();
     }, error=>console.log(error));
   }
   onSubmit(){
     this.createPayment();
+  }
+
+  onChange(option: any) {
+    this.option = option;
   }
 }

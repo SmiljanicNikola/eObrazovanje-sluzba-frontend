@@ -42,6 +42,7 @@ export class PassedExamsComponent implements OnInit {
 
   async TakeExam(exam: any){
     const data = this.findLecturerOnTheSubjects(exam.subjectPerformance.subject_performance_id)
+    console.log(data);
     await data.then(res => this.lecturerOnTheSubject = res)
  
   

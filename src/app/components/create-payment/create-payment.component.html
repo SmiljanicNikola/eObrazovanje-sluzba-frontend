@@ -2,9 +2,6 @@
     <h3>Add Payment</h3>
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <input type="hidden" class="form-control" [(ngModel)]="payment.account.account_id" [value]="id" id="id" required name="id">
-            </div>
-            <div class="form-group">
                 <label for="payment_id">Payment ID</label>
                 <input type="text" class="form-control" [(ngModel)]="payment.id" id="payment_id" required name="payment_id">
             </div>
@@ -19,6 +16,14 @@
             <div class="form-group">
                 <label for="dateOfPayment">Date</label>
                 <input type="date" class="form-control" [(ngModel)]="payment.dateOfPayment" id="dateOfPayment" required name="dateOfPayment">
+            </div>
+            <div class="form-group">
+                <label for="accound.id">Account ID</label>
+                <br />
+                <!-- <input type="text" class="form-control" [(ngModel)]="semesters.department" id="department.id" required name="department.id"> -->
+                <select class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="payment.account" name="account"> 
+                    <option *ngFor="let account of (accounts$ | async)" id="account" [ngValue]="account" required name="account">{{account.account_id}}</option>
+                </select> 
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
         </form> 
