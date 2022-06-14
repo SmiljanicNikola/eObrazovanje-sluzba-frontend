@@ -4,14 +4,12 @@
       <th>Amount</th>
       <th>Date of Payment</th>
       <th>Account</th>
-      <th>Purpose Of Payment</th>
-
     </tr>
     <tr *ngFor="let p of payments">
       <td>{{ p.purposeOfPayment }}</td>
       <td>{{ p.amount }}</td>
       <td>{{ p.dateOfPayment}}</td>
-      <td>{{ ""}}</td>
-      <td>{{ p.purposeOfPayment }}</td>
+      <td>{{ p.account.account_id }}</td>
     </tr>
+    <button class="btn btn-ok" (click)="addPayment()">Add Payment</button>
   </table>

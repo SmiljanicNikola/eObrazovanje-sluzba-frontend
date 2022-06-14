@@ -8,11 +8,11 @@ import { environment } from 'src/environments/environment';
 })
 export class LecturerOnTheSubjectService {
 
-  private apiLecturersUrl = `${environment.apiURL}/api/lecturersOnTheSubject/`
+  private apiLecturersUrl = `${environment.apiURL}/api/lecturersOnTheSubject`
 
   constructor(private http: HttpClient) { }
 
   getExams(id: string): any{
-    return this.http.get<any>(this.apiLecturersUrl + id);
+    return this.http.get<any>(`${this.apiLecturersUrl}/${id}`);
   }
 }

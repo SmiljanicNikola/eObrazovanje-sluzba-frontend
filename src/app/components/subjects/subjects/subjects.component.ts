@@ -17,4 +17,12 @@ export class SubjectsComponent implements OnInit {
     this.subjectService.getSubjcts().subscribe((subjects) => this.subjects = subjects)
   }
 
+  public updateSubject(id:number){
+    this.router.navigate(['updateSubject', id]);
+  }
+
+  public createSubject() {
+    this.router.navigate(['createSubject']);
+  }
+
 }

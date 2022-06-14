@@ -35,6 +35,9 @@ import { PreExaminationObligationsComponent } from './components/pre-examination
 import { ErrorPageComponent } from './components/404/404.component';
 import { AttendingCourseComponent } from './components/attending-course/attending-course.component';
 import { UpdateSemesterComponent } from './components/update-semesters/update-semester.component';
+import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
+import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
+import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -44,7 +47,27 @@ const routes: Routes = [
          data: { 
           expectedRole: ['LECTURER', 'STUDENT', 'ADMIN']
         }},
-        {path: 'admins', component: AdminComponent,
+        {path: 'admins', component: AdminComponent},
+  {path: 'updateStudent', component: UpdateStudentComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: ['STUDENT','ADMIN']
+        }
+  },
+  {path: 'subject-performance', component:SubjectPerformanceComponent,
+        canActivate:[AuthGuard],
+        data: {
+          expectedRole: ['ADMIN', 'LECTURER']
+        }
+  },
+  {path: 'choseStudent/:id', component:StudentSubjectComponent,
+    canActivate:[AuthGuard],
+    data: {
+    expectedRole: 'ADMIN'
+  }
+
+  },
+  {path: 'admins', component: AdminComponent,
     canActivate:[AuthGuard],
     data: {
       expectedRole: 'ADMIN'
@@ -247,6 +270,24 @@ const routes: Routes = [
         data: {
           expectedRole: 'ADMIN'
         }
+  },
+  {path: 'createPayment', component: CreatePaymentComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: ['ADMIN', 'STUDENT']
+      }
+  },
+  {path: 'createSubject', component: CreateSubjectComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'ADMIN'
+      }
+  },
+  {path: 'updateSubject/:id', component: UpdateSubjectComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'ADMIN'
+      }
   },
 
   {path: '**', component: ErrorPageComponent}

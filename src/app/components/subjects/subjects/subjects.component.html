@@ -2,9 +2,18 @@
     <tr>
       <th>Name</th>
       <th>Syllabus</th>
+      <th>Semester Number</th>
+      <th>Actions</th>
     </tr>
     <tr *ngFor="let l of subjects">
       <td>{{ l.name }}</td>
       <td>{{ l.syllabus }}</td>
+      <td>{{ l.semester.semesterNumber }}</td>
+      <td>
+        <button style="margin-left: 5px;" class="btn btn-info" (click)="updateSubject(l.id)" >Update</button>
+      </td>
     </tr>
   </table>
+  <div style="width: 10px; margin: 0 auto">
+    <button class="btn btn-primary" (click)="createSubject()">Add Subject</button>
+</div>

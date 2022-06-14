@@ -50,6 +50,9 @@ import { AttendingCourseComponent } from './components/attending-course/attendin
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './components/admin/admin.component';
 import { UpdateSemesterComponent } from './components/update-semesters/update-semester.component';
+import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
+import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
+import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +96,10 @@ import { UpdateSemesterComponent } from './components/update-semesters/update-se
     PaymentDetailsComponent,
     AttendingCourseComponent,
     ErrorPageComponent,
-    UpdateSemesterComponent
+    UpdateSemesterComponent,
+    CreatePaymentComponent,
+    CreateSubjectComponent,
+    UpdateSubjectComponent
   ],
   imports: [
     BrowserModule,

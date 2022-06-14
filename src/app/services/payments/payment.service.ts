@@ -1,8 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Payment } from 'src/app/models/Payment';
 import {environment} from '../../../environments/environment'
+
+
+const createHeader = {
+  headers: new HttpHeaders({
+    'method':'POST',
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +31,11 @@ export class PaymentService {
 
   getPaymentsByAccountId(accountId:number): Observable<any>{
     return this.http.get(`${this.apiPaymentsUrl}/account/${accountId}`)
+  }
+
+  createPayment(payments: Payment) : Observable<Payment>{
+    console.log(payments);
+    return this.http.post<Payment>(this.apiPaymentsUrl, payments, createHeader);
   }
 
 }

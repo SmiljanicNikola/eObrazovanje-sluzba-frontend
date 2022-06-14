@@ -16,12 +16,17 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  getStudents(): Observable<Account[]>{
+  getAccounts(): Observable<Account[]>{
     return this.http.get<Account[]>(this.apiAccountsUrl);
   }
 
   getAccountByStudentId(studentId:number): Observable<any>{
     return this.http.get(`${this.apiAccountsUrl}/student/${studentId}`);
+  }
+
+  getDepartmentById(id:number): Observable<any>{
+    return this.http.get(`${this.apiAccountsUrl}/${id}`);
+    
   }
 
 }
