@@ -22,7 +22,7 @@
                 <br />
                 <!-- <input type="text" class="form-control" [(ngModel)]="semesters.department" id="department.id" required name="department.id"> -->
                 <select class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="payment.account" name="account"> 
-                    <option *ngFor="let account of (accounts$ | async)" id="account" [ngValue]="account" required name="account">{{account.account_id}}</option>
+                    <option *ngFor="let account of (accounts$ | async)" id="account" [ngValue]="account" required name="account">{{account.student}}</option>
                 </select> 
             </div>
             <button type="submit" class="btn btn-success">Submit</button>

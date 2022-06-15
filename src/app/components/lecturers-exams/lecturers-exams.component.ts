@@ -33,10 +33,11 @@ export class LecturersExamsComponent implements OnInit {
     console.log(username);
 
     //lecturer: this.lecturerService.getLecturerByUsername(username);
-    this.lecturerService.getLecturerByUsername(username).subscribe((lecturer) => this.lecturer = lecturer);
-    console.log(this.lecturer);
+    // this.lecturerService.getLecturerByUsername(username).subscribe((lecturer) => this.lecturer = lecturer);
+    // console.log(this.lecturer);
 
-    //ISPRAVNO this.lecturerService.getLecturerByUsername(username).subscribe((value)=>console.log(value));
+    this.lecturer = this.lecturerService.getLecturerByUsername(username).subscribe((value)=> console.log("VREDNOST: " + value));
+    console.log("LECTURER: " + this.lecturer);
   }
 
   public updateExam(id:number){

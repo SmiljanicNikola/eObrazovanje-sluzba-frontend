@@ -62,7 +62,7 @@ const routes: Routes = [
   {path: 'choseStudent/:id', component:StudentSubjectComponent,
     canActivate:[AuthGuard],
     data: {
-    expectedRole: 'ADMIN'
+    expectedRole: ['ADMIN', 'LECTURER']
   }
 
   },
@@ -117,7 +117,7 @@ const routes: Routes = [
   {path: 'payments', component: PaymentsComponent,
     canActivate:[AuthGuard],
     data: {
-      expectedRole: 'STUDENT'
+      expectedRole: 'ADMIN'
     }
   },
   {path: 'studentDetails/:id', component: StudentDetailsComponent,
