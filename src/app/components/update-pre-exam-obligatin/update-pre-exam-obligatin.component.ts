@@ -27,6 +27,7 @@ export class UpdatePreExamObligatinComponent implements OnInit {
   examDates: ExamDate[];
   subjectPerformances: SubjectPerformance[];
   typeOfRequirements: TypeOfRequirement[];
+  option: any;
 
 
   constructor(private typeService: TypeOfRequirementService ,private subjecPer: SubjectPerformanceService,private examDateService: ExamDateService,private router: Router,private route: ActivatedRoute,private preExamObliService: PreExamObligationService,private subjectService: SubjectService ) { }
@@ -68,6 +69,10 @@ export class UpdatePreExamObligatinComponent implements OnInit {
         this.router.navigate(['/prexam']);
       })
     }
+  }
+
+  onChange(option: any) {
+    this.option = option;
   }
 
 }

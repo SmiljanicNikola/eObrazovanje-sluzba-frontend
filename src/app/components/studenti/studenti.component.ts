@@ -42,4 +42,8 @@ export class StudentiComponent implements OnInit {
     console.log(this.student);
     this.router.navigate(['studentDetails', id]);
   }
+
+  public createStudent() {
+    this.router.navigate(['addStudent']);
+  }
 }

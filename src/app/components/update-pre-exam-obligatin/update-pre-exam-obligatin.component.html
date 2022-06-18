@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="typeOfRequirements">Type of requiremnt</label>
-                <select [(ngModel)]="preExamObligations.typeOfRequirementId" id="typeOfRequirementId" required name="typeOfRequirementId">
+                <select (ngModelChange)="onChange($event)" [(ngModel)]="preExamObligations.typeOfRequirementId" id="typeOfRequirementId" required name="typeOfRequirementId">
                 <option *ngFor="let type of typeOfRequirements" value = {{type.id}}>{{type.name}}</option>
                 </select>
             </div>

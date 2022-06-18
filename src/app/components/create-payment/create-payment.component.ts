@@ -4,9 +4,11 @@ import { Observable } from 'rxjs';
 import { Account } from 'src/app/models/Account';
 import { Departments } from 'src/app/models/Departments';
 import { Payment } from 'src/app/models/Payment';
+import { Student } from 'src/app/models/Student';
 import { AccountService } from 'src/app/services/accounts/account.service';
 import { DepartmentsService } from 'src/app/services/departments/departments.service';
 import { PaymentService } from 'src/app/services/payments/payment.service';
+import { StudentService } from 'src/app/services/student/student.service';
 
 @Component({
   selector: 'app-create-payment',
@@ -19,14 +21,17 @@ export class CreatePaymentComponent implements OnInit {
   payment: Payment;
   account: Account;
   accounts$: Observable<Account[]>;
+  students$: Observable<Student[]>;
+  student: Student;
   option: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private paymentService: PaymentService, private accountService: AccountService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private studentService: StudentService,private paymentService: PaymentService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.payment = new Payment();
     this.id = this.route.snapshot.params['id'];
     this.accounts$ = this.accountService.getAccounts();
+    // this.student = this.studentService.
     console.log(this.accounts$);
   }
   redirectToPayments(){
