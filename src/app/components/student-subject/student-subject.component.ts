@@ -37,6 +37,15 @@ export class StudentSubjectComponent implements OnInit {
     
   }
   
+  searchStudents(event: any) {
+    const searchValue = event.target.value;
+    if(searchValue && searchValue !== "") {
+      this.studentsCopy = this.studentsCopy.filter(s => s.firstname.toLowerCase().includes(searchValue) || 
+      s.lastname.toLowerCase().includes(searchValue))
+    } else{
+      this.studentsCopy = this.students;
+    }
+  }
   createAttendingCourse(id:number){
       this.attendingCourse.student = id;
       this.attendingCourseService.createAttendingCourse(this.attendingCourse).subscribe(data=>{

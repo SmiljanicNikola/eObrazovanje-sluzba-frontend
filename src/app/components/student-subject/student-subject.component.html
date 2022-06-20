@@ -7,6 +7,7 @@
       <th>Adress</th>
       <th>Index Number</th>
       <th>Action</th>
+      <input placeholder="Search students" (keyup)="searchStudents($event)"/>
     </tr>
     <tr *ngFor="let s of studentsCopy">
       <td> {{ s.student_id }} </td>
