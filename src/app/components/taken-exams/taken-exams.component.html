@@ -1,0 +1,22 @@
+<h2>All Exams</h2>
+<table id="exams-table">
+  <tr>
+    <th>Student</th>
+    <th>Name</th>
+    <th>Silabus</th>
+    <th>Lecturer</th>
+    <th>Grade</th>
+  </tr>
+
+  <tr *ngFor="let s of exams">
+    <ng-container
+      *ngIf="s.attendingCourses.student.username == username"
+    >
+      <td>{{ s.attendingCourses.student.username }}</td>
+      <td>{{ s.attendingCourses.subjectPerformance.subject.name }}</td>
+      <td>{{ s.attendingCourses.subjectPerformance.subject.syllabus }}</td>
+      <td>{{ s.lecturer.username }}</td>
+      <td>{{ s.grade }}</td>
+    </ng-container>
+  </tr>
+</table>

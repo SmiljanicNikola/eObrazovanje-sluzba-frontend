@@ -38,6 +38,7 @@ import { UpdateSemesterComponent } from './components/update-semesters/update-se
 import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
 import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
 import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
+import { TakenExamComponentComponent } from './components/taken-exams/taken-exams.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
@@ -299,6 +300,12 @@ const routes: Routes = [
       canActivate:[AuthGuard],
       data: {
         expectedRole: 'ADMIN'
+      }
+  },
+  {path: 'takenExams', component: TakenExamComponentComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'STUDENT'
       }
   },
 
