@@ -19,7 +19,7 @@
       <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-danger" (click)="deleteLecturer(l.lecturer_Id)">Block</button>
       <p *ngIf="l.blocked">This lecturer is blocked</p>
       <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-danger" [routerLink]="['/updateLecturer',l.lecturer_Id]">Update</button>
-      <button style="margin-left: 5px;" class="btn btn-primary">View Schedule</button>
+      <button *ngIf="!l.blocked" style="margin-left: 5px;" class="btn btn-primary">View Schedule</button>
     </td>
   </tr>
   <button  style="margin-left: 5px;" class="btn btn-info" (click)="createLecturer()">Add Lecturer</button>

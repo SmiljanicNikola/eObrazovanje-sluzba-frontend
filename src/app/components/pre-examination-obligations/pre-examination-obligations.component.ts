@@ -20,7 +20,7 @@ export class PreExaminationObligationsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.preExamObligationSerice.getPreExamObligation().subscribe((preExaminationObligations) => this.preExamOb = preExaminationObligations)
+    this.preExamObligationSerice.getPreExamObligation().subscribe((preExaminationObligations) => {console.log(preExaminationObligations); this.preExamOb = preExaminationObligations})
     this.user = this.authService.getToken()
   }
 

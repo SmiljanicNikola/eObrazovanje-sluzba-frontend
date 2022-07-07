@@ -53,4 +53,9 @@ getStudentByCourseId(id:number):Observable<any>{
 
 }
 
+getStudensForPerformance(id:number):Observable<any>{
+  return this.http.get(`${this.attendingUrl}/students/${id}`);
+
+}
+
 }

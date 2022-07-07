@@ -29,12 +29,12 @@ export class PreExamObligationService {
   constructor(private http: HttpClient) { }
 
 
-  getPreExamObligation(): Observable<PreExaminationObligations[]>{
-    return this.http.get<PreExaminationObligations[]>(this.apiPreExamUrl)
+  getPreExamObligation(): Observable<any[]>{
+    return this.http.get<any[]>(this.apiPreExamUrl)
   }
 
-  getPreExamObligationById(id: number): Observable<PreExaminationObligations>{
-    return this.http.get<PreExaminationObligations>(`${this.apiPreExamUrl}/${id}`);
+  getPreExamObligationById(id: number): Observable<any>{
+    return this.http.get<any>(`${this.apiPreExamUrl}/${id}`);
   }
 
   deletePreExamObligation(id: any): Observable<any>{

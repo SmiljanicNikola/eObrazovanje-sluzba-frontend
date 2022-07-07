@@ -30,14 +30,14 @@ export class StudentSubjectComponent implements OnInit {
 
     this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
 
-    this.attendingCourseService.getStudentByCourseId(this.subjectPerformanceId).subscribe((student) => { 
+    this.attendingCourseService.getStudensForPerformance(this.subjectPerformanceId).subscribe((student) => { 
     this.studentsCopy = student;
     this.students = student;
     });
     
   }
   
-  searchStudents(event: any) {
+  searchStudents(event: any) {  
     const searchValue = event.target.value;
     if(searchValue && searchValue !== "") {
       this.studentsCopy = this.studentsCopy.filter(s => s.firstname.toLowerCase().includes(searchValue) || 
@@ -49,14 +49,13 @@ export class StudentSubjectComponent implements OnInit {
   createAttendingCourse(id:number){
       this.attendingCourse.student = id;
       this.attendingCourseService.createAttendingCourse(this.attendingCourse).subscribe(data=>{
-      console.log(data);
       let student = this.studentsCopy.find(s => s.student_id == id);
       if(student){
         let index = this.studentsCopy.indexOf(student);
         this.studentsCopy.splice(index,1);
       }
       this.attendingCourse = {subjectPerformance: this.subjectPerformanceId, student:0};
-      console.log(this.attendingCourse);
+      
     },
     error=>console.log(error));
   }

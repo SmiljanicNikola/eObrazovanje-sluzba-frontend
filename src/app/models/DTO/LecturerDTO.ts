@@ -23,6 +23,8 @@ export class LecturerDTO{
         this.blocked = lecturer.blocked;
         }
     }
+
+    
     
 
 }

@@ -19,6 +19,7 @@ export class AdminComponent implements OnInit {
 })
   admins: any[] = [];
   admin: any;
+  adminCopy:Admin[] = [];
   user: any;
 
   constructor(private adminService: AdminService, private router: Router) { }
@@ -30,6 +31,12 @@ export class AdminComponent implements OnInit {
 
   public createAdmin() {
     this.router.navigate(['addAdmin']);
+  }
+
+
+
+  updateAdmin(id:number){
+    this.router.navigate(['updateAdmin',id]);
   }
 
 }
