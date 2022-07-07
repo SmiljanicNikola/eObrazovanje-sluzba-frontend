@@ -53,6 +53,7 @@ import { UpdateSemesterComponent } from './components/update-semesters/update-se
 import { CreatePaymentComponent } from './components/create-payment/create-payment.component';
 import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
 import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
+import { UpdateAdminComponent } from './components/update-admin/update-admin.component';
 import { TakenExamComponentComponent } from './components/taken-exams/taken-exams.component';
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { TakenExamComponentComponent } from './components/taken-exams/taken-exam
     CreatePaymentComponent,
     CreateSubjectComponent,
     UpdateSubjectComponent,
+    UpdateAdminComponent,
     TakenExamComponentComponent
   ],
   imports: [

@@ -1,0 +1,24 @@
+<div class="card col-md-6 offset-md-3">
+    <h3>Update Admin</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Firstname</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="admin.name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="name">Lastname</label>
+                <input type="text" class="form-control" id="surname" required [(ngModel)]="admin.surname" name="surname">
+            </div>
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" id="username" required [(ngModel)]="admin.username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="name">Adress</label>
+                <input type="text" class="form-control" id="address" required [(ngModel)]="admin.address" name="address">
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form> 
+
+</div>

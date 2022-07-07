@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from 'src/app/models/Admin';
+import { AdminDTO } from 'src/app/models/DTO/AdminDTO';
 import { environment } from 'src/environments/environment';
 
 const uploadHeader = {
@@ -39,12 +40,15 @@ export class AdminService {
     return this.http.delete(`${this.apiAdminsUrl}/${id}`);
   }
 
-  getAdminById(id:number): Observable<any>{
+  getAdminById(id: number): Observable<any>{
     return this.http.get(`${this.apiAdminsUrl}/${id}`);
-    
   }
 
   createAdmin(admin: Admin) : Observable<Admin>{
     return this.http.post<Admin>(this.apiAdminsUrl, admin, createHeader);
+  }
+
+  updateAdmin(lecturer: AdminDTO): Observable<Admin>{
+    return this.http.put<Admin>(`${this.apiAdminsUrl}/${lecturer.id}`,lecturer)
   }
 }

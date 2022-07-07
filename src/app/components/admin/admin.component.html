@@ -4,12 +4,14 @@
       <th>Firstname</th>
       <th>Username</th>
       <th>Adress</th>
+      <th>Action</th>
     </tr>
     <tr *ngFor="let a of admins">
       <td>{{a.surname}}</td>
       <td>{{ a.name }}</td>
       <td>{{ a.username }}</td>
       <td>{{ a.address }}</td>
+      <button *ngIf="!a.blocked" style="margin-left: 5px;" class="btn btn-info" (click)="updateAdmin(a.id)">Update Admin</button>
     </tr>
       <button class="btn btn-info" (click)="createAdmin()">Add Admin</button>
 </table>

@@ -9,12 +9,12 @@
     <th *ngIf="user.roles.includes('LECTURER')  || user.roles.includes('ADMIN') ">Action</th>
   </tr>
   <tr *ngFor="let p of preExamOb">
-    <td>{{ p.subjectPerformance.subject.name}}</td>
+    <td>{{ p.subject}}</td>
     <td>{{ p.mandatory }}</td>
     <td>{{ p.points }}</td>
     <td>{{ p.examDate.date }}</td>
-    <td>{{ p.subjectPerformance.subject.syllabus }}</td>
-    <td>{{ p.typeOfRequirement.name }}</td>
+    <td>{{ p.subjectPerformance }}</td>
+    <td>{{ p.typeOfRequirement }}</td>
   <td *ngIf="user.roles.includes('LECTURER')  || user.roles.includes('ADMIN') ">
   <button style="margin-left: 5px;" class="btn btn-info" (click)="updatePreExamObligation(p.pre_examination_obligation_id)">Update</button>
   </td>

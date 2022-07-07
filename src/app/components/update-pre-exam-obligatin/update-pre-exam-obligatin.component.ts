@@ -37,7 +37,7 @@ export class UpdatePreExamObligatinComponent implements OnInit {
     this.isUpdate = this.id?true:false;
     if(this.isUpdate){
       this.preExamObliService.getPreExamObligationById(this.id).subscribe((data) => { 
-        this.preExamObligations = new PreExaminationDTO(data);
+        this.preExamObligations = data;
         }
       );
     }else{
