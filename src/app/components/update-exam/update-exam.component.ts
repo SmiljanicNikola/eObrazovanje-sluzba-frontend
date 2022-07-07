@@ -55,7 +55,7 @@ export class UpdateExamComponent implements OnInit {
 
     this.takingExamService.updateTakingExam(id,takingExam).subscribe(data=>{
       this.takingExam = data;
-      this.redirectToListOfAllExams;
+      this.redirectToListOfAllExams();
     }, error=>console.log(error));
   }
 

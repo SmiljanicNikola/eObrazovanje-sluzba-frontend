@@ -40,6 +40,8 @@ import { CreateSubjectComponent } from './components/create-subject/create-subje
 import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
 import { UpdateAdminComponent } from './components/update-admin/update-admin.component';
 
+import { TakenExamComponentComponent } from './components/taken-exams/taken-exams.component';
+
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'login'},
   {path: 'login', component: LoginComponent },
@@ -306,6 +308,12 @@ const routes: Routes = [
       canActivate:[AuthGuard],
       data: {
         expectedRole: 'ADMIN'
+      }
+  },
+  {path: 'takenExams', component: TakenExamComponentComponent,
+      canActivate:[AuthGuard],
+      data: {
+        expectedRole: 'STUDENT'
       }
   },
 

@@ -54,6 +54,7 @@ import { CreatePaymentComponent } from './components/create-payment/create-payme
 import { CreateSubjectComponent } from './components/create-subject/create-subject.component';
 import { UpdateSubjectComponent } from './components/update-subject/update-subject.component';
 import { UpdateAdminComponent } from './components/update-admin/update-admin.component';
+import { TakenExamComponentComponent } from './components/taken-exams/taken-exams.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,7 +102,8 @@ import { UpdateAdminComponent } from './components/update-admin/update-admin.com
     CreatePaymentComponent,
     CreateSubjectComponent,
     UpdateSubjectComponent,
-    UpdateAdminComponent
+    UpdateAdminComponent,
+    TakenExamComponentComponent
   ],
   imports: [
     BrowserModule,
